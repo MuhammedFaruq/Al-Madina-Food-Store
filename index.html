@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Al-Madina Store</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- HEADER with logo, nav, contact -->
+<header class="header-main">
+  <div class="header-top">
+    <div class="logo reveal-left">Al-Madina Store 
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" id="menuBtn">☰</button>
+  </div>
+
+  <nav class="header-nav" id="nav-menu">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#doctors">Menu</a></li>
+<li>
+  <a href="#" id="cart-btn">
+    <i data-feather="shopping-cart"></i>
+    <span id="cart-count">0</span>
+  </a>
+    </li>
+      <!-- Desktop Auth Buttons -->
+      <div class="auth-buttons">
+        <button id="login-open" class="btn login-btn">Login</button>
+        <button id="register-open" class="btn primary-btn">Get Started</button>
+      </div>
+    </ul>
+  </nav>
+
+  <!-- Overlay & Drawer (for mobile) -->
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <div class="nav-drawer" id="navDrawer">
+    <span class="close-drawer" id="closeDrawer">&times;</span>
+    <a href="#home">Home</a>
+    <a href="#doctors">Menu</a>
+    <li><a href="" id="cart-btn">🛒 <span id="cart-count">0</span></a></li>
+
+    <div class="drawer-auth">
+      <button id="login-open" class="btn login-btn">Login</button>
+      <button id="register-open" class="btn primary-btn">Get Started</button>
+    </div>
+  </div>
+</header>
+
+
+
+<!-- Register Modal -->
+<div class="modal" id="modal-register">
+  <div class="modal-content">
+    <button class="modal-close" data-close="modal-register">✕</button>
+    <h3>Create Account</h3>
+    <form id="register-form">
+      <div class="form-group">
+        <label>First Name</label>
+        <input type="text" name="firstname" required />
+        <small class="error-text" id="firstname-error"></small>
+      </div>
+      <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" name="lastname" required />
+        <small class="error-text" id="lastname-error"></small>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" name="email" required autocomplete="email" />
+        <small class="error-text" id="email-error"></small>
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" name="password" required autocomplete="new-password" />
+        <small class="error-text" id="password-error"></small>
+      </div>
+      <button class="btn btn-primary" type="submit">Register</button>
+      <p class="form-note">
+        Already have an account?
+        <button type="button" class="linklike" id="switch-to-login">Login</button>
+      </p>
+    </form>
+  </div>
+</div>
+
+<!-- Login Modal -->
+<div class="modal" id="modal-login">
+  <div class="modal-content">
+    <button class="modal-close" data-close="modal-login">✕</button>
+    <h3>Login</h3>
+    <form id="login-form">
+      <label>Email</label>
+      <input type="email" name="email" required />
+      <small class="error-text" id="login-email-error"></small>
+
+      <label>Password</label>
+      <input type="password" name="password" required />
+      <small class="error-text" id="login-password-error"></small>
+
+      <label class="checkbox">
+        <input type="checkbox" name="remember" /> Remember me
+      </label>
+
+      <button class="btn btn-primary" type="submit">Login</button>
+      <p class="form-note">
+        No account?
+        <button type="button" class="linklike" id="switch-to-register">Register</button>
+      </p>
+    </form>
+  </div>
+</div>
+
+
+<!-- Cart Drawer -->
+  <div id="cartDrawer" class="cart" role="dialog" aria-modal="true" aria-labelledby="cartTitle" aria-hidden="true">
+    <div class="cart-header">
+      <h2 id="cartTitle">Cart</h2>
+      <button id="closeCart" class="icon-btn" aria-label="Close cart">✕</button>
+    </div>
+
+    <div id="cartItems" class="cart-items">
+      <!-- Items render here -->
+    </div>
+
+    <div class="cart-footer">
+      <div class="totals">
+        <span>Subtotal</span>
+        <strong id="cartSubtotal">₦0</strong>
+      </div>
+      <button id="checkoutBtn" class="btn btn-primary" type="button">Proceed to Checkout</button>
+      <p class="muted">Taxes and shipping calculated at checkout.</p>
+    </div>
+  </div>
+
+  <div id="overlay" class="overlay" hidden></div>
+
+
+  <!-- Profile Modal -->
+  <div class="modal" id="modal-profile" aria-hidden="true" role="dialog" aria-labelledby="profile-title">
+    <div class="modal-content">
+      <button class="modal-close" data-close="modal-profile">✕</button>
+      <h3 id="profile-title">My Profile</h3>
+      <section class="profile-block">
+        <div class="profile-row"><strong>Name:</strong> <span id="prof-name"></span></div>
+        <div class="profile-row"><strong>Email:</strong> <span id="prof-email"></span></div>
+      </section>
+    </div>
+  </div>
+
+
+<!-- ================= HERO ================= -->
+  <section class="hero">
+  <div class="hero-content container">
+
+    <h2 class="reveal">Fast & Free Delivery</h2>
+    <p class="reveal">
+
+      Order from Al-Madina Store around you.
+    </p>
+
+    <div class="search-box reveal">
+      <i data-feather="search"></i>
+      <input type="text" id="search-input" placeholder="Search Anything here..." />
+    </div>
+
+  </div>
+</section>
+
+  <!-- ================= CATEGORIES ================= -->
+  <section class="categories container">
+    <h3 class="section-title reveal-right">Explore Categories</h3>
+
+    <div class="menu-grid">
+      <button class="cat-btn reveal">Chicken</button>
+      <button class="cat-btn reveal">Food groceries</button>
+      <button class="cat-btn reveal">Drinks</button>
+      <button class="cat-btn reveal">Fruit</button>
+      <button class="cat-btn reveal">Cosmetics</button>
+      <button class="cat-btn reveal">Fish</button>
+      <button class="cat-btn reveal">Ice Cream</button>
+      <button class="cat-btn reveal">Meat</button>
+      <button class="cat-btn reveal">Provision</button>
+      <button class="cat-btn reveal">Bakery</button>
+      <button class="cat-btn reveal">Electronics</button>
+
+    </div>
+  </section>
+  <!-- ================= FILTERED PRODUCTS ================= -->
+<section class="filtered-products container">
+  <h3 class="section-title" id="category-title"></h3>
+  <div class="menu-grid" id="category-products"></div>
+</section>
+
+
+  <!-- ================= MENU GRID ================= -->
+  <section class="menu container" id="menu"><br>
+    <h3 class="section-title reveal-left">Popular Products</h3>
+    <p class="reveal-right" style="font-size: 2rem;">Shop Our Most-Loved Products</p>
+
+    <div class="menu-grid">
+
+
+  <!-- Sweet Potatoes -->
+  <div class="product-card reveal-zoom">
+    <img src="Img/sweet potatoes 2.jpg" alt="Sweet Potatoes">
+    <h4>Sweet Potatoes</h4>
+
+    <div class="price-row">
+      <span class="price">₦5000</span>
+      <span class="old-price">₦7000</span>
+    </div>
+
+    <div class="bottom-row">
+      <div class="stars">★★★★★</div>
+     <button onclick="addToCart(1)" class="cart-btn">
+      <i data-feather="shopping-bag"></i>
+    </button>
+    </div>
+  </div>
+
+  <!-- Banana -->
+  <div class="product-card reveal-zoom">
+    <img src="Img/banana1.jpg" alt="Bananas">
+    <h4>Banana</h4>
+
+    <div class="price-row">
+      <span class="price">₦1000</span>
+      <span class="old-price">₦1700</span>
+    </div>
+
+    <div class="bottom-row">
+      <div class="stars">★★★★★</div>
+      <button onclick="addToCart(2)" class="cart-btn">
+        <i data-feather="shopping-bag">🛒</i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Tomatoes -->
+  <div class="product-card reveal-zoom">
+    <img src="Img/tomatoes.jpg" alt="Red Tomatoes">
+    <h4>Red Tomatoes</h4>
+
+    <div class="price-row">
+      <span class="price">₦5000</span>
+      <span class="old-price">₦6200</span>
+    </div>
+
+    <div class="bottom-row">
+      <div class="stars">★★★★★</div>
+      <button onclick="addToCart(3)" class="cart-btn">
+        <i data-feather="shopping-bag">🛒</i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Onions -->
+  <div class="product-card reveal-zoom">
+    <img src="Img/onions 1.jpg" alt="Onions">
+    <h4>Onions</h4>
+
+    <div class="price-row">
+      <span class="price">₦1500</span>
+      <span class="old-price">₦2300</span>
+    </div>
+
+    <div class="bottom-row">
+      <div class="stars">★★★★★</div>
+      <button onclick="addToCart(4)" class="cart-btn">
+        <i data-feather="shopping-bag">🛒</i>
+      </button>
+    </div>
+    </div>
+
+    <!--Shoe-->
+    <div class="product-card reveal-zoom">
+      <img src="Img/shoe.jpg" alt="shawarma">
+      <h4>Black Shoe</h4>
+
+      <div class="price-row">
+        <span class="price">₦25000</span>
+        <span class="old-price">₦30000</span>
+      </div>
+
+        <div class="bottom-row">
+          <div class="stars">★★★★★</div>
+          <button onclick="addToCart(5)" class="cart-btn">
+            <i data-feather="shopping-bag">🛒</i>
+          </button>
+        </div>
+        </div>
+    
+        <!--pepper-->
+        <div class="product-card reveal-zoom">
+      <img src="Img/pepper.jpg" alt="">
+      <h4>Red pepper</h4>
+
+      <div class="price-row">
+        <span class="price">₦1200</span>
+        <span class="old-price">₦2300</span>
+      </div>
+
+        <div class="bottom-row">
+          <div class="stars">★★★★★</div>
+          <button onclick="addToCart(6)" class="cart-btn">
+            <i data-feather="shopping-bag">🛒</i>
+          </button>
+        </div>
+        </div>
+
+        <!--cucumber-->
+
+      <div class="product-card reveal-zoom">
+      <img src="Img/cucumber 2.jpg" alt="shawarma">
+      <h4>cucumber</h4>
+
+      <div class="price-row">
+        <span class="price">₦1400</span>
+        <span class="old-price">₦3000</span>
+      </div>
+
+        <div class="bottom-row">
+          <div class="stars">★★★★★</div>
+          <button onclick="addToCart(7)" class="cart-btn">
+            <i data-feather="shopping-bag">🛒</i>
+          </button>
+        </div>
+        </div>
+
+        <!--carrot-->
+
+      <div class="product-card reveal-zoom">
+      <img src="Img/carrot.jpg" alt="shawarma">
+      <h4>Carrot</h4>
+
+      <div class="price-row">
+        <span class="price">₦1500</span>
+        <span class="old-price">₦2500</span>
+      </div>
+
+        <div class="bottom-row">
+          <div class="stars">★★★★★</div>
+          <button onclick="addToCart(8)" class="cart-btn">
+            <i data-feather="shopping-bag">🛒</i>
+          </button>
+        </div>
+        </div>
+
+</div>
+
+    <!-- View More Button -->
+  <div style="margin-top: 40px;">
+    <a href="product.html" class="btn">View All Products</a>
+  </div>
+    
+  </section>
+
+  <!-- ================= ABOUT US ================= -->
+<section class="about container" id="about"><br><br>
+  <h3 class="section-title" align="center">About Al-Madina Store</h3>
+
+  <div class="about-grid">
+    <div class="about-text reveal-left">
+      <h4>Your Trusted Food Delivery Service</h4>
+      <p>
+        FoodieExpress is dedicated to bringing you the best meals from your favorite restaurants—
+        fresh, fast, and affordable. We partner with trusted chefs and kitchens to ensure 
+        every meal delivered meets our high-quality standards.
+      </p>
+
+      <p>
+        With advanced technology, reliable riders, and a passion for good food, we make meal delivery 
+        simple, fast, and enjoyable. Whether you're craving pizza, burgers, shawarma, or rice dishes—
+        we’ve got you covered!
+      </p>
+    </div>
+
+    <div class="about-img">
+      <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd" class="reveal-right">
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= WHAT WE OFFER ================= -->
+<section class="services container" id="services"><br><br>
+  <h3 class="section-title" align="center">What We Offer</h3>
+
+  <div class="services-grid">
+
+    <div class="service-card">
+      <span class="service-icon">⚡</span>
+      <h4>Fast Delivery</h4>
+      <p>Our riders ensure your food arrives hot and on time—every time.</p>
+    </div>
+
+    <div class="service-card">
+      <span class="service-icon">🍲</span>
+      <h4>Quality Meals</h4>
+      <p>We partner with top-rated restaurants to deliver fresh and delicious dishes.</p>
+    </div>
+
+    <div class="service-card">
+      <span class="service-icon">💳</span>
+      <h4>Secure Payments</h4>
+      <p>Pay easily and securely using your preferred payment method.</p>
+    </div>
+
+    <div class="service-card">
+      <span class="service-icon">📍</span>
+      <h4>Nationwide Coverage</h4>
+      <p>We deliver across Nigeria—wherever you are, we’ll reach you!</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= OUR TEAM ================= -->
+<section class="team container" id="team"><br><br>
+  <h3 class="section-title" align="Center">Meet Our Team</h3>
+
+  <div class="team-grid">
+
+    <div class="team-card">
+      <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e" alt="Team member">
+      <h4>Sarah Johnson</h4>
+      <p class="role">Head Chef</p>
+    </div>
+
+    <div class="team-card">
+      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c" alt="Team member">
+      <h4>Musa Abdullahi</h4>
+      <p class="role">Operations Manager</p>
+    </div>
+
+    <div class="team-card">
+      <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2" alt="Team member">
+      <h4>Linda Davis</h4>
+      <p class="role">Customer Support Lead</p>
+    </div>
+
+  </div>
+</section>
+
+
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container footer-grid">
+
+      <div>
+        <h4>About</h4>
+        <p>Fast, fresh meals delivered straight to your home.</p>
+      </div>
+
+      <div>
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Delivery Info</a></li>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Partner with us</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Newsletter</h4>
+        <form>
+          <input type="email" placeholder="Email address" required />
+          <button class="subscribe-btn">Subscribe</button>
+        </form>
+      </div>
+
+    </div>
+
+    <p class="copyright">© 2025 FoodieExpress. All rights reserved.</p>
+  </footer>
+
+</body>
+<script src="Script.js"></script>
+</html>
