@@ -14,27 +14,30 @@
 
 <body>
 
-  <!-- HEADER with logo, nav, contact -->
-<header class="header-main">
+ <header class="header-main">
+
   <div class="header-top">
-    <div class="logo reveal-left">Al-Madina Store 
-    </div>
+    <div class="logo reveal-left">Al-Madina Store</div>
 
     <!-- Mobile Menu Button -->
     <button class="mobile-menu-btn" id="menuBtn">☰</button>
   </div>
 
+  <!-- DESKTOP NAV -->
   <nav class="header-nav" id="nav-menu">
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#doctors">Menu</a></li>
-<li>
-  <a href="#" id="cart-btn">
-    <i data-feather="shopping-cart"></i>
-    <span id="cart-count">0</span>
-  </a>
-    </li>
-      <!-- Desktop Auth Buttons -->
+
+      <!-- DESKTOP CART BUTTON (ONLY ONE) -->
+      <li>
+        <a href="#" id="cartButton" class="cart-link">
+          🛒
+          <span id="cartCount">0</span>
+        </a>
+      </li>
+
+      <!-- DESKTOP AUTH -->
       <div class="auth-buttons">
         <button id="login-open" class="btn login-btn">Login</button>
         <button id="register-open" class="btn primary-btn">Get Started</button>
@@ -42,22 +45,29 @@
     </ul>
   </nav>
 
-  <!-- Overlay & Drawer (for mobile) -->
+  <!-- DARK OVERLAY -->
   <div class="nav-overlay" id="navOverlay"></div>
 
+  <!-- MOBILE MENU DRAWER -->
   <div class="nav-drawer" id="navDrawer">
     <span class="close-drawer" id="closeDrawer">&times;</span>
+
     <a href="#home">Home</a>
     <a href="#doctors">Menu</a>
-    <li><a href="" id="cart-btn">🛒 <span id="cart-count">0</span></a></li>
 
+    <!-- MOBILE CART BUTTON -->
+    <a href="#" id="cartButtonMobile" class="cart-mobile">
+      🛒 <span id="cartCountMobile">0</span>
+    </a>
+
+    <!-- MOBILE AUTH -->
     <div class="drawer-auth">
       <button id="login-open" class="btn login-btn">Login</button>
       <button id="register-open" class="btn primary-btn">Get Started</button>
     </div>
   </div>
-</header>
 
+</header>
 
 
 <!-- Register Modal -->
@@ -123,41 +133,14 @@
 </div>
 
 
-<!-- Cart Drawer -->
-  <div id="cartDrawer" class="cart" role="dialog" aria-modal="true" aria-labelledby="cartTitle" aria-hidden="true">
-    <div class="cart-header">
-      <h2 id="cartTitle">Cart</h2>
-      <button id="closeCart" class="icon-btn" aria-label="Close cart">✕</button>
-    </div>
+<aside class="cart" id="cart">
+  <h3>Your Cart</h3>
+  <div id="cart-items"></div>
+  <p>Total: ₦<span id="cart-total">0.00</span></p>
+  <button id="checkout">Checkout</button>
+  <button id="close-cart" class="secondary">Close</button>
+</aside>
 
-    <div id="cartItems" class="cart-items">
-      <!-- Items render here -->
-    </div>
-
-    <div class="cart-footer">
-      <div class="totals">
-        <span>Subtotal</span>
-        <strong id="cartSubtotal">₦0</strong>
-      </div>
-      <button id="checkoutBtn" class="btn btn-primary" type="button">Proceed to Checkout</button>
-      <p class="muted">Taxes and shipping calculated at checkout.</p>
-    </div>
-  </div>
-
-  <div id="overlay" class="overlay" hidden></div>
-
-
-  <!-- Profile Modal -->
-  <div class="modal" id="modal-profile" aria-hidden="true" role="dialog" aria-labelledby="profile-title">
-    <div class="modal-content">
-      <button class="modal-close" data-close="modal-profile">✕</button>
-      <h3 id="profile-title">My Profile</h3>
-      <section class="profile-block">
-        <div class="profile-row"><strong>Name:</strong> <span id="prof-name"></span></div>
-        <div class="profile-row"><strong>Email:</strong> <span id="prof-email"></span></div>
-      </section>
-    </div>
-  </div>
 
 
 <!-- ================= HERO ================= -->
@@ -204,168 +187,219 @@
 </section>
 
 
-  <!-- ================= MENU GRID ================= -->
-  <section class="menu container" id="menu"><br>
-    <h3 class="section-title reveal-left">Popular Products</h3>
-    <p class="reveal-right" style="font-size: 2rem;">Shop Our Most-Loved Products</p>
+  <!-- ================= POPULAR PRODUCTS ================= -->
+<section class="menu container" id="menu"><br>
+  <h3 class="section-title reveal-left">Popular Products</h3>
+  <p class="reveal-right" style="font-size: 2rem;">Shop Our Most-Loved Products</p>
 
-    <div class="menu-grid">
+  <div class="menu-grid">
 
-
-  <!-- Sweet Potatoes -->
-  <div class="product-card reveal-zoom">
-    <img src="Img/sweet potatoes 2.jpg" alt="Sweet Potatoes">
-    <h4>Sweet Potatoes</h4>
-
-    <div class="price-row">
-      <span class="price">₦5000</span>
-      <span class="old-price">₦7000</span>
-    </div>
-
-    <div class="bottom-row">
-      <div class="stars">★★★★★</div>
-     <button onclick="addToCart(1)" class="cart-btn">
-      <i data-feather="shopping-bag"></i>
-    </button>
-    </div>
-  </div>
-
-  <!-- Banana -->
-  <div class="product-card reveal-zoom">
-    <img src="Img/banana1.jpg" alt="Bananas">
-    <h4>Banana</h4>
-
-    <div class="price-row">
-      <span class="price">₦1000</span>
-      <span class="old-price">₦1700</span>
-    </div>
-
-    <div class="bottom-row">
-      <div class="stars">★★★★★</div>
-      <button onclick="addToCart(2)" class="cart-btn">
-        <i data-feather="shopping-bag">🛒</i>
-      </button>
-    </div>
-  </div>
-
-  <!-- Tomatoes -->
-  <div class="product-card reveal-zoom">
-    <img src="Img/tomatoes.jpg" alt="Red Tomatoes">
-    <h4>Red Tomatoes</h4>
-
-    <div class="price-row">
-      <span class="price">₦5000</span>
-      <span class="old-price">₦6200</span>
-    </div>
-
-    <div class="bottom-row">
-      <div class="stars">★★★★★</div>
-      <button onclick="addToCart(3)" class="cart-btn">
-        <i data-feather="shopping-bag">🛒</i>
-      </button>
-    </div>
-  </div>
-
-  <!-- Onions -->
-  <div class="product-card reveal-zoom">
-    <img src="Img/onions 1.jpg" alt="Onions">
-    <h4>Onions</h4>
-
-    <div class="price-row">
-      <span class="price">₦1500</span>
-      <span class="old-price">₦2300</span>
-    </div>
-
-    <div class="bottom-row">
-      <div class="stars">★★★★★</div>
-      <button onclick="addToCart(4)" class="cart-btn">
-        <i data-feather="shopping-bag">🛒</i>
-      </button>
-    </div>
-    </div>
-
-    <!--Shoe-->
+    <!-- Sweet Potatoes (ID 52) -->
     <div class="product-card reveal-zoom">
-      <img src="Img/shoe.jpg" alt="shawarma">
-      <h4>Black Shoe</h4>
+      <img src="Img/sweet potatoes 2.jpg" alt="Sweet Potatoes">
+      <h4>Sweet Potatoes</h4>
+      <div class="price-row">
+        <span class="price">₦5000</span>
+        <span class="old-price">₦7000</span>
+      </div>
+      <div class="bottom-row">
+        <div class="stars">★★★★★</div>
+        <button class="add-to-cart" data-id="52">🛒</button>
+      </div>
+    </div>
 
+    <!-- Banana (ID 50) -->
+    <div class="product-card reveal-zoom">
+      <img src="Img/banana1.jpg" alt="Banana">
+      <h4>Banana</h4>
+      <div class="price-row">
+        <span class="price">₦1000</span>
+        <span class="old-price">₦1700</span>
+      </div>
+      <div class="bottom-row">
+        <div class="stars">★★★★★</div>
+        <button class="add-to-cart" data-id="50"> 🛒</button>
+      </div>
+    </div>
+
+    <!-- Tomatoes (ID 53) -->
+    <div class="product-card reveal-zoom">
+      <img src="Img/tomatoes.jpg" alt="Tomatoes">
+      <h4>Red Tomatoes</h4>
+      <div class="price-row">
+        <span class="price">₦5000</span>
+        <span class="old-price">₦6200</span>
+      </div>
+      <div class="bottom-row">
+        <div class="stars">★★★★★</div>
+        <button class="add-to-cart" data-id="53"> 🛒</button>
+      </div>
+    </div>
+
+    <!-- Onions (ID 37) -->
+    <div class="product-card reveal-zoom">
+      <img src="Img/onions 1.jpg" alt="Onions">
+      <h4>Onions</h4>
+      <div class="price-row">
+        <span class="price">₦1500</span>
+        <span class="old-price">₦2300</span>
+      </div>
+      <div class="bottom-row">
+        <div class="stars">★★★★★</div>
+        <button class="add-to-cart" data-id="37"> 🛒 </button>
+      </div>
+    </div>
+
+    <!-- Shoe (NOT in your array — ADDING ID 200 manually) -->
+    <div class="product-card reveal-zoom">
+      <img src="Img/shoe.jpg" alt="Black Shoe">
+      <h4>Black Shoe</h4>
       <div class="price-row">
         <span class="price">₦25000</span>
         <span class="old-price">₦30000</span>
       </div>
+      <div class="bottom-row">
+        <div class="stars">★★★★★</div>
+        <button class="add-to-cart" data-id="200"> 🛒</button>
+      </div>
+    </div>
 
-        <div class="bottom-row">
-          <div class="stars">★★★★★</div>
-          <button onclick="addToCart(5)" class="cart-btn">
-            <i data-feather="shopping-bag">🛒</i>
-          </button>
-        </div>
-        </div>
-    
-        <!--pepper-->
-        <div class="product-card reveal-zoom">
-      <img src="Img/pepper.jpg" alt="">
-      <h4>Red pepper</h4>
-
+    <!-- Pepper (ID 32) -->
+    <div class="product-card reveal-zoom">
+      <img src="Img/pepper.jpg" alt="Red Pepper">
+      <h4>Red Pepper</h4>
       <div class="price-row">
         <span class="price">₦1200</span>
         <span class="old-price">₦2300</span>
       </div>
+      <div class="bottom-row">
+        <div class="stars">★★★★★</div>
+        <button class="add-to-cart" data-id="32"> 🛒</button>
+      </div>
+    </div>
 
-        <div class="bottom-row">
-          <div class="stars">★★★★★</div>
-          <button onclick="addToCart(6)" class="cart-btn">
-            <i data-feather="shopping-bag">🛒</i>
-          </button>
-        </div>
-        </div>
-
-        <!--cucumber-->
-
-      <div class="product-card reveal-zoom">
-      <img src="Img/cucumber 2.jpg" alt="shawarma">
-      <h4>cucumber</h4>
-
+    <!-- Cucumber (ID 49) -->
+    <div class="product-card reveal-zoom">
+      <img src="Img/cucumber 2.jpg" alt="Cucumber">
+      <h4>Cucumber</h4>
       <div class="price-row">
         <span class="price">₦1400</span>
         <span class="old-price">₦3000</span>
       </div>
+      <div class="bottom-row">
+        <div class="stars">★★★★★</div>
+        <button class="add-to-cart" data-id="49"> 🛒</button>
+      </div>
+    </div>
 
-        <div class="bottom-row">
-          <div class="stars">★★★★★</div>
-          <button onclick="addToCart(7)" class="cart-btn">
-            <i data-feather="shopping-bag">🛒</i>
-          </button>
-        </div>
-        </div>
-
-        <!--carrot-->
-
-      <div class="product-card reveal-zoom">
-      <img src="Img/carrot.jpg" alt="shawarma">
+    <!-- Carrot (ID 59) -->
+    <div class="product-card reveal-zoom">
+      <img src="Img/carrot.jpg" alt="Carrot">
       <h4>Carrot</h4>
-
       <div class="price-row">
         <span class="price">₦1500</span>
         <span class="old-price">₦2500</span>
       </div>
+      <div class="bottom-row">
+        <div class="stars">★★★★★</div>
+        <button class="add-to-cart" data-id="59"> 🛒</button>
+      </div>
+    </div>
 
-        <div class="bottom-row">
-          <div class="stars">★★★★★</div>
-          <button onclick="addToCart(8)" class="cart-btn">
-            <i data-feather="shopping-bag">🛒</i>
-          </button>
-        </div>
-        </div>
+  </div>
 
-</div>
-
+  
     <!-- View More Button -->
   <div style="margin-top: 40px;">
     <a href="product.html" class="btn">View All Products</a>
   </div>
     
   </section>
+
+
+  <div class="modal" id="modal-checkout" aria-hidden="true">
+  <div class="modal-content">
+
+    <button class="modal-close" data-close="modal-checkout">✕</button>
+    <h3 id="checkout-title">Checkout</h3>
+
+    <form id="checkout-form">
+
+      <!-- DELIVERY METHOD -->
+      <fieldset>
+        <legend>Delivery Method</legend>
+
+        <label>
+          <input type="radio" name="deliveryMethod" value="pickup" required>
+          Pick Up at Al-Madina Store
+          <p>No 345 zoo road kano</p>
+        </label>
+
+        <label>
+          <input type="radio" name="deliveryMethod" value="delivery">
+          Delivery to Address
+        </label>
+
+        <label>
+          <input type="radio" name="deliveryMethod" value="payondelivery">
+          Pay on Delivery
+        </label>
+      </fieldset>
+
+      <!-- DELIVERY ADDRESS -->
+      <fieldset id="delivery-fields">
+        <legend>Delivery Address</legend>
+
+        <label>Full name
+          <input type="text" name="fullName"/>
+        </label>
+
+        <label>Phone
+          <input type="tel" name="phone"/>
+        </label>
+
+        <label>Street address
+          <input type="text" name="address1"/>
+        </label>
+
+        <label>City
+          <input type="text" name="city"/>
+        </label>
+
+        <label>Notes (optional)
+          <input type="text" name="notes" />
+        </label>
+      </fieldset>
+
+      <!-- PAYMENT METHOD (Card Only) -->
+      <fieldset id="payment-fields" style="margin-top:1rem;">
+        <legend>Card Payment</legend>
+
+        <label>Card number
+          <input type="text" name="card" minlength="12" maxlength="19"/>
+        </label>
+
+        <label>Expiry (MM/YY)
+          <input type="text" name="exp" placeholder="MM/YY"/>
+        </label>
+
+        <label>CVC
+          <input type="password" name="cvc" minlength="3" maxlength="4"/>
+        </label>
+      </fieldset>
+
+      <div class="cart-total" style="margin-top:0.75rem;">
+        Payable: ₦<span id="checkout-payable">0.00</span>
+      </div>
+
+      <p class="form-error" id="checkout-error"></p>
+
+      <button type="submit">Place Order</button>
+
+    </form>
+  </div>
+</div>
+
 
   <!-- ================= ABOUT US ================= -->
 <section class="about container" id="about"><br><br>
@@ -489,4 +523,10 @@
 
 </body>
 <script src="Script.js"></script>
+
+<script src="https://unpkg.com/feather-icons"></script>
+<script>
+  feather.replace();
+</script>
+
 </html>

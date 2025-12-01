@@ -1,3 +1,160 @@
+
+/* ============================================================
+   COMPLETE CART + CATEGORIES + SEARCH + PRODUCTS ARRAY
+   FOR AL-MADINA STORE — FULL WORKING SCRIPT.JS
+   JUST PASTE THIS FILE AND DELETE YOUR OLD SCRIPT.JS
+   ============================================================ */
+
+/* ----------- PRODUCTS ARRAY (FULL FROM YOUR MESSAGE) ----------- */
+const products = [
+  { id: 1, category: "Chicken", name: "Full Chicken Pack", price: 8000, img: "Img/Chicken 2.jpg" },
+  { id: 2, category: "Chicken", name: "Chicken Wings", price: 3200, img: "Img/Chicken wig.jpg" },
+  { id: 3, category: "Chicken", name: "Chicken Leg", price: 3200, img: "Img/chicken leg.jpg" },
+  { id: 4, category: "Chicken", name: "Chicken laps", price: 3200, img: "Img/chicken laps.jpg" },
+  { id: 5, category: "Chicken", name: "Chicken Full", price: 8000, img: "Img/chicken 2.jpg" },
+
+  { id: 6, category: "Ice Cream", name: "Ice Cream", price: 1500, img: "Img/ice cream1.jpg" },
+  { id: 7, category: "Ice Cream", name: "Ice Cream", price: 1500, img: "Img/ice cream2.jpg" },
+  { id: 8, category: "Ice Cream", name: "Ice Cream", price: 1500, img: "Img/ice cream3.jpg" },
+  { id: 9, category: "Ice Cream", name: "Ice Cream", price: 1500, img: "Img/ice cream4.jpg" },
+  { id: 10, category: "Ice Cream", name: "Ice Cream", price: 1500, img: "Img/ice cream5.jpg" },
+  { id: 11, category: "Ice Cream", name: "Ice Cream", price: 1500, img: "Img/saudia ice cream.jpg" },
+  { id: 12, category: "Ice Cream", name: "Ice Cream", price: 1500, img: "Img/saudia ice cream2.jpg" },
+  { id: 13, category: "Ice Cream", name: "Ice Cream", price: 1500, img: "Img/saudia ice cream3.jpg" },
+
+  { id: 14, category: "Drinks", name: "5alive Juice", price: 1500, img: "Img/5alive.jpg" },
+  { id: 15, category: "Drinks", name: "Coca-Cola", price: 500, img: "Img/cocacola2.jpg" },
+  { id: 16, category: "Drinks", name: "Sprite", price: 500, img: "Img/sprite.jpg" },
+  { id: 17, category: "Drinks", name: "Table Water", price: 250, img: "Img/table water 1.jpg" },
+  { id: 18, category: "Drinks", name: "Hollandia Yoghurt", price: 1200, img: "Img/hollandia yogurt.jpg" },
+  { id: 19, category: "Drinks", name: "Monster", price: 1500, img: "Img/monster.jpg" },
+  { id: 20, category: "Drinks", name: "Al-Maria Milk", price: 1800, img: "Img/almaria milk.jpg" },
+  { id: 21, category: "Drinks", name: "Table Water", price: 1500, img: "Img/water.jpg" },
+  { id: 22, category: "Drinks", name: "Coke Pack", price: 12000, img: "Img/cocacola1.jpg" },
+  { id: 23, category: "Drinks", name: "Fruit Juices", price: 1200, img: "Img/fruit juices.jpg" },
+  { id: 24, category: "Drinks", name: "Fanta", price: 500, img: "Img/fanta1.jpg" },
+
+  /* ---- Food Groceries ----- */
+{id:31,category:"Food groceries",name:"Onions Leaf",price:1000,img:"Img/onions leaf.jpg"},
+{id:32,category:"Food groceries",name:"Pepper",price:1200,img:"Img/pepper.jpg"},
+{id:33,category:"Food groceries",name:"Rice",price:55000,img:"Img/rice.jpg"},
+{id:34,category:"Food groceries",name:"Peas and Carrot",price:7400,img:"Img/peas and carrot.jpg"},
+{id:35,category:"Food groceries",name:"Randa Spagetti",price:3500,img:"Img/randa spa.jpg"},
+{id:36,category:"Food groceries",name:"Titus Sandy",price:1500,img:"Img/sandy 1.jpg"},
+{id:37,category:"Food groceries",name:"Onions",price:1500,img:"Img/onions 1.jpg"},
+{id:38,category:"Food groceries",name:"Palm Oil",price:3500,img:"Img/palm oil1.jpg"},
+{id:39,category:"Food groceries",name:"Oil",price:4400,img:"Img/oil 1.jpg"},
+{id:40,category:"Food groceries",name:"Peak Milk",price:1500,img:"Img/peak milk.jpg"},
+{id:41,category:"Food groceries",name:"Knorr",price:1500,img:"Img/knorr maggi.jpg"},
+{id:42,category:"Food groceries",name:"Green Pepper",price:1200,img:"Img/green pepper.jpg"},
+{id:43,category:"Food groceries",name:"Golden Penny Spagetti",price:800,img:"Img/gooden penny spa.jpg"},
+{id:44,category:"Food groceries",name:"Garlic",price:500,img:"Img/garlic.jpg"},
+{id:45,category:"Food groceries",name:"Gino Tomatoes",price:250,img:"Img/gino tomatoes1.jpg"},
+{id:46,category:"Food groceries",name:"Ginger",price:500,img:"Img/ginger.jpg"},
+{id:47,category:"Food groceries",name:"Egg Pack",price:5400,img:"Img/egg.jpg"},
+{id:48,category:"Food groceries",name:"Curry",price:1700,img:"Img/curry.jpg"},
+{id:49,category:"Food groceries",name:"Cucumber",price:1400,img:"Img/cucumber 2.jpg"},
+{id:50,category:"Food groceries",name:"Banana",price:1000,img:"Img/banana1.jpg"},
+{id:51,category:"Food groceries",name:"Yam",price:3500,img:"Img/yam 1.jpg"},
+{id:52,category:"Food groceries",name:"Sweet Potatoes",price:5000,img:"Img/sweet potatoes.jpg"},
+{id:53,category:"Food groceries",name:"Fresh Tomatoes",price:5000,img:"Img/tomatoes.jpg"},
+{id:54,category:"Food groceries",name:"Okaro",price:700,img:"Img/okaro.jpg"},
+{id:55,category:"Food groceries",name:"Maggi Star",price:1500,img:"Img/maggi.jpg"},
+{id:56,category:"Food groceries",name:"Indomie",price:8500,img:"Img/indomie 1.jpg"},
+{id:57,category:"Food groceries",name:"Fresh Meat",price:5500,img:"Img/meat 1.jpg"},
+{id:58,category:"Food groceries",name:"Custard",price:3790,img:"Img/custard 1.jpg"},
+{id:59,category:"Food groceries",name:"Carrot",price:1500,img:"Img/carrot.jpg"},
+{id:60,category:"Food groceries",name:"Coconut",price:1500,img:"Img/coconut.jpg"},
+{id:61,category:"Food groceries",name:"Corn Flask",price:2800,img:"Img/cornflask.jpg"},
+{id:62,category:"Food groceries",name:"Small Peak Milk",price:1300,img:"Img/peak tin milk 2.jpg"},
+{id:63,category:"Food groceries",name:"Egg",price:180,img:"Img/single egg.jpg"},
+{id:64,category:"Food groceries",name:"Pringles",price:4500,img:"Img/pringles.jpg"},
+
+/* ----- Fruits ----- */
+{id:65,category:"Fruit",name:"Water Melon",price:1200,img:"Img/water melon1.jpg"},
+{id:66,category:"Fruit",name:"Strawberry",price:1500,img:"Img/strawberry1.jpg"},
+{id:67,category:"Fruit",name:"Pineapple",price:1200,img:"Img/pinapple 1.jpg"},
+{id:68,category:"Fruit",name:"Fruits",price:1500,img:"Img/fruit.jpg"},
+{id:69,category:"Fruit",name:"Apple",price:1500,img:"Img/apple.jpg"},
+{id:70,category:"Fruit",name:"Banana",price:1000,img:"Img/banana1.jpg"},
+{id:71,category:"Fruit",name:"Carrot",price:1500,img:"Img/carrot.jpg"},
+{id:72,category:"Fruit",name:"Cucumber",price:1400,img:"Img/cucumber1.jpg"},
+
+/* ---- Cosmetics ---- */
+{id:73,category:"Cosmetics",name:"Vaseline",price:2300,img:"Img/vaseline cream.jpg"},
+{id:74,category:"Cosmetics",name:"Nivea Cream",price:2600,img:"Img/nivea cream.jpg"},
+{id:75,category:"Cosmetics",name:"Body Spray",price:1500,img:"Img/hugu perfeum.jpg"},
+{id:76,category:"Cosmetics",name:"Colgate",price:1500,img:"Img/colgate .jpg"},
+{id:77,category:"Cosmetics",name:"Nivea Men",price:4800,img:"Img/nivea men.jpg"},
+{id:78,category:"Cosmetics",name:"Nivea Cream",price:4800,img:"Img/nivea cream2.jpg"},
+{id:79,category:"Cosmetics",name:"Dettol Soap",price:2800,img:"Img/dettol1.jpg"},
+{id:80,category:"Cosmetics",name:"Davey Cream",price:4800,img:"Img/davery cream.jpg"},
+{id:81,category:"Cosmetics",name:"Dove Soap",price:1000,img:"Img/dove soap.jpg"},
+{id:82,category:"Cosmetics",name:"Khamram",price:28000,img:"Img/khamram pef.jpg"},
+{id:83,category:"Cosmetics",name:"Al-Arab",price:40000,img:"Img/al arab pef.jpg"},
+{id:84,category:"Cosmetics",name:"Nivea Cream",price:4800,img:"Img/nivea cream 3.jpg"},
+{id:85,category:"Cosmetics",name:"Nivea Cream",price:4800,img:"Img/nivea cream 4.jpg"},
+{id:86,category:"Cosmetics",name:"Pink Love",price:3000,img:"Img/pink love pef.jpg"},
+{id:87,category:"Cosmetics",name:"Submile",price:2500,img:"Img/submile pef.jpg"},
+{id:88,category:"Cosmetics",name:"Bathing Soap",price:2500,img:"Img/soap.jpg"},
+{id:89,category:"Cosmetics",name:"OMO",price:2500,img:"Img/omo.jpg"},
+
+/* ---- Fish ---- */
+{id:90,category:"Fish",name:"Titus Fish",price:1500,img:"Img/fish1.jpg"},
+{id:91,category:"Fish",name:"Titus Fish",price:3800,img:"Img/fish2.jpg"},
+{id:92,category:"Fish",name:"Titus Fish",price:7500,img:"Img/fish3.jpg"},
+{id:93,category:"Fish",name:"Titus Fish",price:2500,img:"Img/fish4.jpg"},
+{id:94,category:"Fish",name:"Stock Fish",price:15000,img:"Img/stock fish.jpg"},
+
+/* ---- Meat ---- */
+{id:95,category:"Meat",name:"Fresh Meat",price:5500,img:"Img/meat 1.jpg"},
+{id:96,category:"Meat",name:"Goat Meat",price:4900,img:"Img/meat 2.jpg"},
+{id:97,category:"Meat",name:"Cow Meat",price:5500,img:"Img/meat 3.jpg"},
+{id:98,category:"Meat",name:"Ram Meat",price:7500,img:"Img/meat4.jpg"},
+{id:99,category:"Meat",name:"Meat",price:1000,img:"Img/meat5.jpg"},
+{id:100,category:"Meat",name:"Meat",price:1500,img:"Img/meat6.jpg"},
+
+/* ---- Provision ---- */
+{id:101,category:"Provision",name:"Lipton",price:1000,img:"Img/lipton.jpg"},
+{id:102,category:"Provision",name:"Millo",price:1500,img:"Img/millo 1.jpg"},
+{id:103,category:"Provision",name:"Nescafe",price:1100,img:"Img/nescafe.jpg"},
+{id:104,category:"Provision",name:"Millo",price:1500,img:"Img/millo tea.jpg"},
+{id:105,category:"Provision",name:"Ovaltine",price:1500,img:"Img/ovaltine.jpg"},
+{id:106,category:"Provision",name:"Peak",price:1500,img:"Img/peak tin milk 2.jpg"},
+{id:107,category:"Provision",name:"Millo",price:1500,img:"Img/millo 2.jpg"},
+{id:108,category:"Provision",name:"Nescafe",price:1500,img:"Img/nescafe 2.jpg"},
+
+/* ---- Bakery ---- */
+{id:109,category:"Bakery",name:"Slice Bread",price:1400,img:"Img/slices bread1.jpg"},
+{id:110,category:"Bakery",name:"Bread",price:2300,img:"Img/slices bread2.jpg"},
+{id:111,category:"Bakery",name:"Slice Bread",price:900,img:"Img/slices bread3.jpg"},
+{id:112,category:"Bakery",name:"Bread",price:1200,img:"Img/bread.jpg"},
+{id:113,category:"Bakery",name:"Cake",price:11000,img:"Img/cake 1.jpg"},
+{id:114,category:"Bakery",name:"Bread",price:1200,img:"Img/bread1.jpg"},
+{id:115,category:"Bakery",name:"Bread",price:1200,img:"Img/bread2.jpg"},
+
+/* ---- Electronics ---- */
+{id:116,category:"Electronics",name:"Airpod",price:10000,img:"Img/airpord.jpg"},
+{id:117,category:"Electronics",name:"Apple Watch Ultra",price:34000,img:"Img/Apple watch ultra.jpg"},
+{id:118,category:"Electronics",name:"iPhone 11",price:21000,img:"Img/iphone 11.jpg"},
+{id:119,category:"Electronics",name:"iPhone 16",price:960000,img:"Img/iphone 16 black.jpg"},
+{id:120,category:"Electronics",name:"Big JBL",price:12000,img:"Img/jbl big.jpg"},
+{id:121,category:"Electronics",name:"iPhone 13",price:32000,img:"Img/iphone 13.jpg"},
+{id:122,category:"Electronics",name:"iPhone 15 Pro Max",price:780000,img:"Img/iphone 15promax.jpg"},
+{id:123,category:"Electronics",name:"iPhone 16 Pro Max",price:1600000,img:"Img/iphone 16promax.jpg"},
+{id:124,category:"Electronics",name:"JBL Speaker",price:160000,img:"Img/jbl.jpg"},
+{id:125,category:"Electronics",name:"iPhone 11 Pro Max",price:340000,img:"Img/iphone 11promax.jpg"},
+{id:126,category:"Electronics",name:"iPhone 12 Pro Max",price:580000,img:"Img/iphone 12promax.jpg"},
+{id:127,category:"Electronics",name:"iPhone 14 Pro Max",price:780000,img:"Img/iphone14pro.jpg"},
+{id:128,category:"Electronics",name:"MacBook Air",price:899000,img:"Img/macbook laptop.jpg"},
+{id:129,category:"Electronics",name:"Samsung S23 Ultra",price:1700000,img:"Img/samsung s23 ultra.jpg"},
+{id:130,category:"Electronics",name:"Sony Headset",price:17000,img:"Img/sony headset.jpg"},
+{id:131,category:"Electronics",name:"iPhone 16",price:960000,img:"Img/iphone 16.jpg"},
+{id:132,category:"Electronics",name:"Apple Watch",price:120000,img:"Img/Apple watch.jpg"}
+];
+
+
+
 /* 6. NAVIGATION DRAWER (MOBILE) */
 const menuBtn = document.getElementById('menuBtn');
 const navDrawer = document.getElementById('navDrawer');
@@ -64,69 +221,76 @@ function closeModal(modal) {
   modal.style.display = "none";
 }
 
-/* ========== REGISTER FUNCTION ========== */
+/* =======================================================
+   SHOW USER WHEN LOGGED IN (AUTO)
+======================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const loggedUser = JSON.parse(localStorage.getItem("almadinaUser"));
+  if (loggedUser) {
+    showUserLoggedIn(loggedUser);
+  }
+});
+
+
 document.getElementById("register-form").addEventListener("submit", e => {
   e.preventDefault();
 
-  // Inputs
   const firstname = e.target.firstname.value.trim();
   const lastname = e.target.lastname.value.trim();
   const email = e.target.email.value.trim();
   const password = e.target.password.value.trim();
 
-  // Error fields
   const firstnameError = document.getElementById("firstname-error");
   const lastnameError = document.getElementById("lastname-error");
   const emailError = document.getElementById("email-error");
   const passwordError = document.getElementById("password-error");
 
-  // Clear errors
   [firstnameError, lastnameError, emailError, passwordError].forEach(e => (e.textContent = ""));
 
   let hasError = false;
 
-  // Validation
-  if (!firstname || firstname.length < 5) {
-    firstnameError.textContent = "First name must be at least 5 letters.";
+  if (firstname.length < 5) {
+    firstnameError.textContent = "First name must be at least 3 letters.";
     hasError = true;
   }
 
-  if (!lastname || lastname.length < 4) {
-    lastnameError.textContent = "Last name must be at least 4 letters.";
+  if (lastname.length < 4) {
+    lastnameError.textContent = "Last name must be at least 2 letters.";
     hasError = true;
   }
 
-  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    emailError.textContent = "Please enter a valid email.";
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    emailError.textContent = "Enter a valid email.";
     hasError = true;
   }
 
-  if (!password || password.length < 6) {
+  if (password.length < 6) {
     passwordError.textContent = "Password must be at least 6 characters.";
     hasError = true;
   }
 
   if (hasError) return;
 
-  // Existing users
-  const users = JSON.parse(localStorage.getItem("citycareUsers")) || [];
+  let users = JSON.parse(localStorage.getItem("almadinaUsers")) || [];
 
   if (users.some(u => u.email === email)) {
-    emailError.textContent = "This email is already registered.";
+    emailError.textContent = "This email already exists.";
     return;
   }
 
-  // Save user
-  const newUser = { firstname, lastname, email, password };
+  let newUser = { firstname, lastname, email, password };
   users.push(newUser);
-  localStorage.setItem("citycareUsers", JSON.stringify(users));
-  localStorage.setItem("citycareUser", JSON.stringify(newUser));
+
+  localStorage.setItem("almadinaUsers", JSON.stringify(users));
+  localStorage.setItem("almadinaUser", JSON.stringify(newUser));
 
   closeModal(registerModal);
-  alert(`Welcome, ${firstname} ${lastname}!`);
+  showUserLoggedIn(newUser);
+  alert(`Welcome, ${firstname}!`);
 });
 
-/* ========== LOGIN FUNCTION ========== */
+
 document.getElementById("login-form").addEventListener("submit", e => {
   e.preventDefault();
 
@@ -138,61 +302,56 @@ document.getElementById("login-form").addEventListener("submit", e => {
 
   emailError.textContent = "";
   passwordError.textContent = "";
-  let hasError = false;
 
-  // Validation
-  if (!email) {
-    emailError.textContent = "Please enter your email.";
-    hasError = true;
-  }
+  const users = JSON.parse(localStorage.getItem("almadinaUsers")) || [];
 
-  if (!password) {
-    passwordError.textContent = "Please enter your password.";
-    hasError = true;
-  }
+  const user = users.find(u => u.email === email && u.password === password);
 
-  if (hasError) return;
-
-  const users = JSON.parse(localStorage.getItem("citycareUsers")) || [];
-  const foundUser = users.find(u => u.email === email && u.password === password);
-
-  if (!foundUser) {
+  if (!user) {
     passwordError.textContent = "Invalid email or password.";
     return;
   }
 
-  localStorage.setItem("citycareUser", JSON.stringify(foundUser));
+  localStorage.setItem("almadinaUser", JSON.stringify(user));
   closeModal(loginModal);
-  alert(`Welcome back, ${foundUser.firstname}!`);
+  showUserLoggedIn(user);
+  alert(`Welcome back, ${user.firstname}!`);
 });
 
-/* 4. LOGGED-IN USER DISPLAY */
+
 function showUserLoggedIn(user) {
   const headerAuth = document.querySelector(".auth-buttons");
   const drawerAuth = document.querySelector(".drawer-auth");
 
   headerAuth.innerHTML = `
     <div class="user-menu">
-      <span id="patientNameHeader">👤 ${user.firstname} ${user.lastname}</span>
-      <button id="logout-btn" class="btn logout-btn">Logout</button>
+      <span>👤 ${user.firstname}</span>
+      <button class="btn logout-btn" id="logout-desktop">Logout</button>
     </div>
   `;
 
   drawerAuth.innerHTML = `
     <div class="user-menu">
-      <span id="patientNameHeaderMobile">${user.firstname} ${user.lastname}</span>
-      <button id="logout-btn-mobile" class="btn logout-btn">Logout</button>
+      <span>${user.firstname} ${user.lastname}</span>
+      <button class="btn logout-btn" id="logout-mobile">Logout</button>
     </div>
   `;
 
-  document.getElementById("logout-btn").addEventListener("click", logoutUser);
-  document.getElementById("logout-btn-mobile").addEventListener("click", logoutUser);
+  // Bind events after inserting into DOM
+  document.getElementById("logout-desktop")
+    .addEventListener("click", logoutUser);
+
+  document.getElementById("logout-mobile")
+    .addEventListener("click", logoutUser);
 }
 
+
 function logoutUser() {
-  localStorage.removeItem("citycareUser");
-  location.reload();
+  localStorage.removeItem("almadinaUser");
+  window.location.reload();
 }
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
   
@@ -223,921 +382,305 @@ document.addEventListener("DOMContentLoaded", () => {
   revealOnScroll(); // run once on load
 });
 
-// Your product data (You can add more)
-const products = [
-  {
-    category: "Chicken",
-    name: "Full Chicken Pack",
-    price: "₦8000",
-    img: "Img/Chicken 2.jpg"
-  },
-  {
-    category: "Chicken",
-    name: "Chicken Wings",
-    price: "₦3200",
-    img: "Img/Chicken wig.jpg"
-  },
-  {
-    category: "Chicken",
-    name: "Chicken Leg",
-    price: "₦3200",
-    img: "Img/chicken leg.jpg"
-  },
-  {
-    category: "Chicken",
-    name: "Chicken laps",
-    price: "₦3200",
-    img: "Img/chicken laps.jpg"
-  },
-  {
-    category: "Chicken",
-    name: "Chicken Full",
-    price: "₦8000",
-    img: "Img/chicken 2.jpg"
-  },
-  {
-    category: "Ice Cream",
-    name: "Ice Cream",
-    price: "₦1500",
-    img: "Img/ice cream1.jpg"
-  },
-  {
-    category: "Ice Cream",
-    name: "Ice Cream",
-    price: "₦1500",
-    img: "Img/ice cream2.jpg"
-  },
-  {
-    category: "Ice Cream",
-    name: "Ice Cream",
-    price: "₦1500",
-    img: "Img/ice cream3.jpg"
-  },
-  {
-    category: "Ice Cream",
-    name: "Ice Cream",
-    price: "₦1500",
-    img: "Img/ice cream4.jpg"
-  },
-  {
-    category: "Ice Cream",
-    name: "Ice Cream",
-    price: "₦1500",
-    img: "Img/ice cream5.jpg"
-  },
-  {
-    category: "Ice Cream",
-    name: "Ice Cream",
-    price: "₦1500",
-    img: "Img/saudia ice cream.jpg"
-  },
-
-  {
-    category: "Ice Cream",
-    name: "Ice Cream",
-    price: "₦1500",
-    img: "Img/saudia ice cream2.jpg"
-  },
-  {
-    category: "Ice Cream",
-    name: "Ice Cream",
-    price: "₦1500",
-    img: "Img/saudia ice cream3.jpg"
-  },
-
-  
-  {
-    category: "Drinks",
-    name: "5alive Juice",
-    price: "₦1500",
-    img: "Img/5alive.jpg"
-  },
-  {
-    category: "Drinks",
-    name: "Coca-Cola",
-    price: "₦500",
-    img: "Img/cocacola2.jpg"
-  },
-  {
-    category: "Drinks",
-    name: "Sprite",
-    price: "₦500",
-    img: "Img/sprite.jpg"
-  },
-  {
-    category: "Drinks",
-    name: "Table Water",
-    price: "₦250",
-    img: "Img/table water 1.jpg"
-  },
-
-  {
-    category: "Drinks",
-    name: "Hollandia Youghurt",
-    price: "₦1200",
-    img: "Img/hollandia yogurt.jpg"
-  },
-  {
-    category: "Drinks",
-    name: "Monster",
-    price: "₦1500",
-    img: "Img/monster.jpg"
-  },
-  {
-    category: "Drinks",
-    name: "Al-Maria Milk",
-    price: "₦1800",
-    img: "Img/almaria milk.jpg"
-  },
-  {
-    category: "Drinks",
-    name: "Table Water",
-    price: "₦1500",
-    img: "Img/water.jpg"
-  },
-  {
-    category: "Drinks",
-    name: "Coke Pack",
-    price: "₦12000",
-    img: "Img/cocacola1.jpg"
-  },
-  {
-    category: "Drinks",
-    name: "Fruit Juices",
-    price: "₦1200",
-    img: "Img/fruit juices.jpg"
-  },
-  {
-    category: "Drinks",
-    name: "Fanta",
-    price: "₦500",
-    img: "Img/fanta1.jpg"
-  },
-
-  {
-    category: "Food groceries",
-    name: "Onions Leaf",
-    price: "₦1000",
-    img: "Img/onions leaf.jpg"
-  },
-  {
-    category: "Food groceries",
-    name: "Pepper",
-    price: "₦1200",
-    img: "Img/pepper.jpg"
-  },
-  {
-    category: "Food groceries",
-    name: "Rice",
-    price: "₦55000",
-    img: "Img/rice.jpg"
-  },
-  {
-    category: "Food groceries",
-    name: "Peas and Carrot",
-    price: "₦7400",
-    img: "Img/peas and carrot.jpg"
-  },
-  {
-    category: "Food groceries",
-    name: "Randa Spagetti",
-    price: "₦3500",
-    img: "Img/randa spa.jpg"
-  },
-  {
-    category: "Food groceries",
-    name: "Titus Sandy",
-    price: "₦1500",
-    img: "Img/sandy 1.jpg"
-  },
-  {
-    category: "Food groceries",
-    name: "Onions",
-    price: "₦1500",
-    img: "Img/onions 1.jpg"
-  },
-  {
-    category: "Food groceries",
-    name: "Palm Oil",
-    price: "₦3500",
-    img: "Img/palm oil1.jpg"
-  },
-  {
-    category: "Food groceries",
-    name: "Oil",
-    price: "₦4400",
-    img: "Img/oil 1.jpg"
-  },
-  {
-    category: "Food groceries",
-    name: "Peak Milk",
-    price: "₦1500",
-    img: "Img/peak milk.jpg"
-  },
-  {
-    category: "Food groceries",
-    name: "Knorr",
-    price: "₦1500",
-    img: "Img/knorr maggi.jpg"
-  },
-  {
-    category: "Food groceries",
-    name: "Green Pepper",
-    price: "₦1200",
-    img: "Img/green pepper.jpg"
-  },
-  {
-    category: "Food groceries",
-    name: "Golden penny Spagetti",
-    price: "₦800",
-    img: "Img/gooden penny spa.jpg"
-  },
-  {
-    category: "Food groceries",
-    name: "Garlic",
-    price: "₦500",
-    img: "Img/garlic.jpg"
-  },
-  {
-    category: "Food groceries",
-    name: "Gino Tomatoes",
-    price: "₦250",
-    img: "Img/gino tomatoes1.jpg"
-  },
-  {
-    category: "Food groceries",
-    name: "Ginger",
-    price: "₦500",
-    img: "Img/ginger.jpg"
-  },
-  {
-    category: "Food groceries",
-    name: "Egg Pack",
-    price: "₦5400",
-    img: "Img/egg.jpg"
-  },
-  {
-    category: "Food groceries",
-    name: "Curry",
-    price: "₦1700",
-    img: "Img/curry.jpg"
-  },
-  {
-    category: "Food groceries",
-    name: "Cucumber",
-    price: "₦1400",
-    img: "Img/cucumber 2.jpg"
-  },
-  {
-    category: "Food groceries",
-    name: "Banana",
-    price: "₦1000",
-    img: "Img/banana1.jpg"
-  },
-  {
-    category: "Food groceries",
-    name: "Yam",
-    price: "₦3500",
-    img: "Img/yam 1.jpg"
-  },
-  {
-    category: "Food groceries",
-    name: "Sweet Potatoes",
-    price: "₦5000",
-    img: "Img/sweet potatoes.jpg"
-  },
-  {
-    category: "Food groceries",
-    name: "Fresh Tomatoes",
-    price: "₦5000",
-    img: "Img/tomatoes.jpg"
-  },
-  {
-    category: "Food groceries",
-    name: "Okaro",
-    price: "₦700",
-    img: "Img/okaro.jpg"
-  },
-  {
-    category: "Food groceries",
-    name: "Maggi Star",
-    price: "₦1500",
-    img: "Img/maggi.jpg"
-  },
-  {
-    category: "Food groceries",
-    name: "indomie",
-    price: "₦8500",
-    img: "Img/indomie 1.jpg"
-  },
-
-  {
-    category: "Food groceries",
-    name: "Fresh Meat",
-    price: "₦5500",
-    img: "Img/meat 1.jpg"
-  },
-  {
-    category: "Food groceries",
-    name: "Custard",
-    price: "₦3790",
-    img: "Img/custard 1.jpg"
-  },
-  {
-    category: "Food groceries",
-    name: "Carrot",
-    price: "₦1500",
-    img: "Img/carrot.jpg"
-  },
-  {
-    category: "Food groceries",
-    name: "Coconut",
-    price: "₦1500",
-    img: "Img/coconut.jpg"
-  },
-  {
-    category: "Food groceries",
-    name: "Corn Flask",
-    price: "₦2800",
-    img: "Img/cornflask.jpg"
-  },
-
-  {
-    category: "Food groceries",
-    name: "Small peak milk",
-    price: "₦1300",
-    img: "Img/peak tin milk 2.jpg"
-  },
-  {
-    category: "Food groceries",
-    name: "Egg",
-    price: "₦180",
-    img: "Img/single egg.jpg"
-  },
-  {
-    category: "Food groceries",
-    name: "Pringles",
-    price: "₦4500",
-    img: "Img/pringles.jpg"
-  },
 
 
-  {
-    category: "Fruit",
-    name: "Water Melon",
-    price: "₦1200",
-    img: "Img/water melon1.jpg"
-  },
-  {
-    category: "Fruit",
-    name: "Strawberry",
-    price: "₦1500",
-    img: "Img/strawberry1.jpg"
-  },
+/*******************************
+   SIMPLE FIXED CART SYSTEM
+   (MATCHING YOUR HTML EXACTLY)
+********************************/
 
-  {
-    category: "Fruit",
-    name: "Pineapple",
-    price: "₦1200",
-    img: "Img/pinapple 1.jpg"
-  },
+// ====== SELECT ELEMENTS ======
+const cartEl = document.getElementById("cart");
+const cartItemsEl = document.getElementById("cart-items");
+const cartTotalEl = document.getElementById("cart-total");
 
-  {
-    category: "Fruit",
-    name: "Fruits",
-    price: "₦1500",
-    img: "Img/fruit.jpg"
-  },
-  {
-    category: "Fruit",
-    name: "Apple",
-    price: "₦1500",
-    img: "Img/apple.jpg"
-  },
-  {
-    category: "Fruit",
-    name: "Banana",
-    price: "₦1000",
-    img: "Img/banana1.jpg"
-  },
-  {
-    category: "Fruit",
-    name: "Carrot",
-    price: "₦1500",
-    img: "Img/carrot.jpg"
-  },
-  {
-    category: "Fruit",
-    name: "Cucumber",
-    price: "₦1400",
-    img: "Img/cucumber1.jpg"
-  },
+const cartButton = document.getElementById("cartButton");
+const cartButtonMobile = document.getElementById("cartButtonMobile");
+const closeCartBtn = document.getElementById("close-cart");
 
+const cartCountDesktop = document.getElementById("cartCount");
+const cartCountMobile = document.getElementById("cartCountMobile");
 
-  {
-    category: "Cosmetics",
-    name: "Vaseline",
-    price: "₦2300",
-    img: "Img/vaseline cream.jpg"
-  },
-  {
-    category: "Cosmetics",
-    name: "Nivea Cream",
-    price: "₦2600",
-    img: "Img/nivea cream.jpg"
-  },
-  {
-    category: "Cosmetics",
-    name: "Body Spray",
-    price: "₦1500",
-    img: "Img/hugu perfeum.jpg"
-  },
-  {
-    category: "Cosmetics",
-    name: "Colgate",
-    price: "₦1500",
-    img: "Img/colgate .jpg"
-  },
-  {
-    category: "Cosmetics",
-    name: "Nivea Men",
-    price: "₦4800",
-    img: "Img/nivea men.jpg"
-  },
-  {
-    category: "Cosmetics",
-    name: "Nivea Cream",
-    price: "₦4800",
-    img: "Img/nivea cream2.jpg"
-  },
-  {
-    category: "Cosmetics",
-    name: "Dettol Soap",
-    price: "₦2800",
-    img: "Img/dettol1.jpg"
-  },
-  {
-    category: "Cosmetics",
-    name: "Davey Cream",
-    price: "₦4800",
-    img: "Img/davery cream.jpg"
-  },
-  {
-    category: "Cosmetics",
-    name: "Dove Soap",
-    price: "₦1000",
-    img: "Img/dove soap.jpg"
-  },
-  {
-    category: "Cosmetics",
-    name: "Khamram ",
-    price: "₦28000",
-    img: "Img/khamram pef.jpg"
-  },
-  {
-    category: "Cosmetics",
-    name: "Al-Arab",
-    price: "₦40000",
-    img: "Img/al arab pef.jpg"
-  },
-  {
-    category: "Cosmetics",
-    name: "Nivea Cream",
-    price: "₦4800",
-    img: "Img/nivea cream 3.jpg"
-  },
-  {
-    category: "Cosmetics",
-    name: "Nivea Cream",
-    price: "₦4800",
-    img: "Img/nivea cream 4.jpg"
-  },
-  {
-    category: "Cosmetics",
-    name: "Pink Love",
-    price: "₦3000",
-    img: "Img/pink love pef.jpg"
-  },
-  {
-    category: "Cosmetics",
-    name: "Submile",
-    price: "₦2500",
-    img: "Img/submile pef.jpg"
-  },
-  {
-    category: "Cosmetics",
-    name: "Bathing Soap",
-    price: "₦2500",
-    img: "Img/soap.jpg"
-  },
-  {
-    category: "Cosmetics",
-    name: "OMO",
-    price: "₦2500",
-    img: "Img/omo.jpg"
-  },
+const checkoutBtn = document.getElementById("checkout");
 
-
-
-
-
-  {
-    category: "Fish",
-    name: "Titus Fish",
-    price: "₦1500",
-    img: "Img/fish1.jpg"
-  },
-
-  {
-    category: "Fish",
-    name: "Titus Fish",
-    price: "₦3800",
-    img: "Img/fish2.jpg"
-  },
-  {
-    category: "Fish",
-    name: "Titus Fish",
-    price: "₦7500",
-    img: "Img/fish3.jpg"
-  },
-  {
-    category: "Fish",
-    name: "Titus Fish",
-    price: "₦2500",
-    img: "Img/fish4.jpg"
-  },
-  {
-    category: "Fish",
-    name: "Stock Fish",
-    price: "₦15000",
-    img: "Img/stock fish.jpg"
-  },
-
-
-
-  {
-    category: "Meat",
-    name: "Fresh Meat",
-    price: "₦5500",
-    img: "Img/meat 1.jpg"
-  },
-  {
-    category: "Meat",
-    name: "Goat Meat",
-    price: "₦4900",
-    img: "Img/meat 2.jpg"
-  },
-  {
-    category: "Meat",
-    name: "Cow Meat",
-    price: "₦5500",
-    img: "Img/meat 3.jpg"
-  },
-  {
-    category: "Meat",
-    name: "Ram Meat",
-    price: "₦7500",
-    img: "Img/meat4.jpg"
-  },
-  {
-    category: "Meat",
-    name: "Meat",
-    price: "₦1000",
-    img: "Img/meat5.jpg"
-  },
-  {
-    category: "Meat",
-    name: "Meat",
-    price: "₦1500",
-    img: "Img/meat6.jpg"
-  },
-
-
-
-  {
-    category: "Provision",
-    name: "Lipton",
-    price: "₦1000",
-    img: "Img/lipton.jpg"
-  },
-  {
-    category: "Provision",
-    name: "Millo",
-    price: "₦1500",
-    img: "Img/millo 1.jpg"
-  },
-  {
-    category: "Provision",
-    name: "Nescafe",
-    price: "₦1100",
-    img: "Img/nescafe.jpg"
-  },
-  {
-    category: "Provision",
-    name: "Millo",
-    price: "₦1500",
-    img: "Img/millo tea.jpg"
-  },
-  {
-    category: "Provision",
-    name: "Ovaltine",
-    price: "₦1500",
-    img: "Img/ovaltine.jpg"
-  },
-  {
-    category: "Provision",
-    name: "Peak",
-    price: "₦1500",
-    img: "Img/peak tin milk 2.jpg"
-  },
-  {
-    category: "Provision",
-    name: "Millo",
-    price: "₦1500",
-    img: "Img/millo 2.jpg"
-  },
-  {
-    category: "Provision",
-    name: "Nescafe",
-    price: "₦1500",
-    img: "Img/nescafe 2.jpg"
-  },
-
-
-
-  {
-    category: "Bakery",
-    name: "Slice Bread",
-    price: "₦1400",
-    img: "Img/slices bread1.jpg"
-  },
-  {
-    category: "Bakery",
-    name: "Bread",
-    price: "₦2300",
-    img: "Img/slices bread2.jpg"
-  },
-  {
-    category: "Bakery",
-    name: "Slice Bread",
-    price: "₦900",
-    img: "Img/slices bread3.jpg"
-  },
-  {
-    category: "Bakery",
-    name: "Bread",
-    price: "₦1200",
-    img: "Img/bread.jpg"
-  },
-  {
-    category: "Bakery",
-    name: "Cake",
-    price: "₦11000",
-    img: "Img/cake 1.jpg"
-  },
-  {
-    category: "Bakery",
-    name: "Bread",
-    price: "₦1200",
-    img: "Img/bread1.jpg"
-  },
-  {
-    category: "Bakery",
-    name: "Bread",
-    price: "₦1200",
-    img: "Img/bread2.jpg"
-  },
-
-
-
-
-  {
-    category: "Electronics",
-    name: "Airpord",
-    price: "₦10000",
-    img: "Img/airpord.jpg"
-  },
-  {
-    category: "Electronics",
-    name: "Apple watch ultra",
-    price: "₦34000",
-    img: "Img/Apple watch ultra.jpg"
-  },
-  {
-    category: "Electronics",
-    name: "Iphone 11",
-    price: "₦21000",
-    img: "Img/iphone 11.jpg"
-  },
-  {
-    category: "Electronics",
-    name: "Iphone 16",
-    price: "₦960000",
-    img: "Img/iphone 16 black.jpg"
-  },
-  {
-    category: "Electronics",
-    name: "Big Jbl",
-    price: "₦12000",
-    img: "Img/jbl big.jpg"
-  },
-  {
-    category: "Electronics",
-    name: "Iphone 13",
-    price: "₦32000",
-    img: "Img/iphone 13.jpg"
-  },
-  {
-    category: "Electronics",
-    name: "Iphone 15 pro-max",
-    price: "₦780000",
-    img: "Img/iphone 15promax.jpg"
-  },
-  {
-    category: "Electronics",
-    name: "Iphone 16 pro-max",
-    price: "₦1.600.000",
-    img: "Img/iphone 16promax.jpg"
-  },
-  {
-    category: "Electronics",
-    name: "Jbl",
-    price: "₦160000",
-    img: "Img/jbl.jpg"
-  },
-  {
-    category: "Electronics",
-    name: "Iphone 11 pro-max",
-    price: "₦340000",
-    img: "Img/iphone 11promax.jpg"
-  },
-  {
-    category: "Electronics",
-    name: "Iphone 12 pro-max",
-    price: "₦580000",
-    img: "Img/iphone 12promax.jpg"
-  },
-  {
-    category: "Electronics",
-    name: "Iphone 14 pro-max",
-    price: "₦780000",
-    img: "Img/iphone14pro.jpg"
-  },
-  {
-    category: "Electronics",
-    name: "Macbook Air ",
-    price: "₦899000",
-    img: "Img/macbook laptop.jpg"
-  },
-  {
-    category: "Electronics",
-    name: "Samsung s23 ultra",
-    price: "₦1.700.000",
-    img: "Img/samsung s23 ultra.jpg"
-  },
-  {
-    category: "Electronics",
-    name: "Sony",
-    price: "₦17000",
-    img: "Img/sony headset.jpg"
-  },
-  {
-    category: "Electronics",
-    name: "Iphone 16",
-    price: "₦960000",
-    img: "Img/iphone 16.jpg"
-  },
-  {
-    category: "Electronics",
-    name: "Apple Watch",
-    price: "₦120000",
-    img: "Img/Apple watch.jpg"
-  },
-
-
-
-];
-
-// ========== CATEGORY FILTER CLICK ==========
+// Search & Categories
+const searchInput = document.getElementById("search-input");
 const categoryButtons = document.querySelectorAll(".cat-btn");
 const categoryTitle = document.getElementById("category-title");
 const categoryProducts = document.getElementById("category-products");
 
-categoryButtons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    const selected = btn.textContent.replace(/[^a-zA-Z ]/g, "").trim(); // remove emojis
+// ====== LOAD CART FROM STORAGE ======
+let cart = JSON.parse(localStorage.getItem("almadina_cart") || "{}");
 
-    // Set section title
-    categoryTitle.textContent = selected + " Dishes";
+function saveCart() {
+  localStorage.setItem("almadina_cart", JSON.stringify(cart));
+}
 
-    // Filter products
-    const filtered = products.filter(item => item.category === selected);
+// ====== UPDATE BADGE ======
+function updateCartBadge() {
+  const count = Object.values(cart).reduce((a, b) => a + b, 0);
+  if (cartCountDesktop) cartCountDesktop.textContent = count;
+  if (cartCountMobile) cartCountMobile.textContent = count;
+}
 
-    // Display products
-    categoryProducts.innerHTML = filtered.map(item => `
-      <div class="product-card">
-        <img src="${item.img}" alt="${item.name}">
-        <h4>${item.name}</h4>
-        <div class="price-row">
-          <p class="price">${item.price}</p>
+// ====== OPEN / CLOSE CART ======
+function openCart() {
+  cartEl.classList.add("open");
+  renderCart();
+}
+
+function closeCart() {
+  cartEl.classList.remove("open");
+}
+
+cartButton.addEventListener("click", openCart);
+cartButtonMobile.addEventListener("click", openCart);
+closeCartBtn.addEventListener("click", closeCart);
+
+// ====== ADD TO CART ======
+function addToCart(id) {
+  cart[id] = (cart[id] || 0) + 1;
+  saveCart();
+  updateCartBadge();
+  renderCart();
+}
+
+// Detect all add-to-cart clicks
+document.addEventListener("click", e => {
+  if (e.target.classList.contains("add-to-cart")) {
+    addToCart(e.target.dataset.id);
+  }
+});
+
+// ====== RENDER CART (VERTICAL BUTTONS VERSION) ======
+function renderCart() {
+  const items = Object.entries(cart);
+  cartItemsEl.innerHTML = "";
+  let total = 0;
+
+  if (items.length === 0) {
+    cartItemsEl.innerHTML = "<p>Your cart is empty.</p>";
+    cartTotalEl.textContent = "0.00";
+    return;
+  }
+
+  items.forEach(([id, qty]) => {
+    const product = products.find(p => p.id == id);
+    if (!product) return;
+
+    const lineTotal = product.price * qty;
+    total += lineTotal;
+
+    cartItemsEl.innerHTML += `
+      <div class="cart-row">
+        <img src="${product.img}" class="cart-img">
+
+        <div class="cart-info">
+          <p><strong>${product.name}</strong></p>
+          <p>₦${product.price.toLocaleString()}</p>
+          <p>Qty: ${qty}</p>
         </div>
-        <div class="bottom-row">
-          <span class="stars">⭐⭐⭐⭐⭐</span>
-          <button class="cart-btn"><i data-feather="shopping-cart">🛒</i></button>
+
+        <div class="cart-actions">
+          <button class="qty-btn" onclick="changeQty(${id}, -1)">−</button>
+          <button class="qty-btn" onclick="changeQty(${id}, 1)">＋</button>
+          <button class="delete-btn" onclick="removeItem(${id})">🗑️</button>
         </div>
       </div>
-    `).join("");
+    `;
+  });
 
-    // Re-load feather icons
-    feather.replace();
+  // 🔥 FIXED TOTAL
+  cartTotalEl.textContent = total.toLocaleString();
+}
+
+
+
+
+// ====== UPDATE QTY ======
+function changeQty(id, delta) {
+  cart[id] += delta;
+  if (cart[id] <= 0) delete cart[id];
+  saveCart();
+  updateCartBadge();
+  renderCart();
+}
+
+// ====== REMOVE ITEM ======
+function removeItem(id) {
+  delete cart[id];
+  saveCart();
+  updateCartBadge();
+  renderCart();
+}
+
+
+
+// ====== SEARCH SYSTEM ======
+searchInput.addEventListener("input", () => {
+  const q = searchInput.value.toLowerCase().trim();
+  if (!q) {
+    categoryProducts.innerHTML = "";
+    categoryTitle.textContent = "";
+    return;
+  }
+
+  const filtered = products.filter(p => p.name.toLowerCase().includes(q));
+
+  categoryTitle.textContent = `Search Results`;
+
+  if (filtered.length === 0) {
+    categoryProducts.innerHTML = "<p>No results found</p>";
+    return;
+  }
+
+  categoryProducts.innerHTML = filtered.map(item => `
+  <div class="product-card">
+    <img src="${item.img}">
+    <h4>${item.name}</h4>
+
+    <div class="price-row">
+      <p>₦${item.price.toLocaleString()}</p>
+    </div>
+    <div class="bottom-row">
+        <div class="stars">★★★★★</div>
+        <button class="add-to-cart" data-id="${item.id}">🛒</button>
+      </div>
+  </div>
+`).join("");
+
+});
+
+
+// ====== CATEGORY FILTER ======
+categoryButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const cat = btn.textContent.trim();
+    const filtered = products.filter(p => p.category === cat);
+
+    categoryTitle.textContent = `${cat} Products`;
+
+    categoryProducts.innerHTML = filtered.map(item => `
+  <div class="product-card">
+    <img src="${item.img}">
+    <h4>${item.name}</h4>
+
+    <div class="price-row">
+      <p>₦${item.price.toLocaleString()}</p>
+    </div>
+    <div class="bottom-row">
+        <div class="stars">★★★★★</div>
+        <button class="add-to-cart" data-id="${item.id}">🛒</button>
+      </div>
+  </div>
+`).join("");
+
   });
 });
 
 
-const searchInput = document.getElementById("search-input");
+/* =======================================================
+   CHECKOUT BUTTON → OPEN CHECKOUT MODAL
+======================================================= */
+checkoutBtn.addEventListener("click", () => {
+  const user = JSON.parse(localStorage.getItem("almadinaUser") || "null");
 
-searchInput.addEventListener("keyup", function () {
-  const query = searchInput.value.toLowerCase().trim();
-
-  // If search empty → clear product results
-  if (query === "") {
-    categoryProducts.innerHTML = "";
+  if (!user) {
+    // Open login/register modal instead of alert
+    closeCart(); 
+    openModal(document.getElementById("modal-login"));
     return;
   }
 
-  // Filter products
-  const filtered = products.filter(item =>
-    item.name.toLowerCase().includes(query)
-  );
+  // Close the cart drawer first
+  closeCart();
 
-  // If nothing found
-  if (filtered.length === 0) {
-    categoryProducts.innerHTML = `<p style="padding:10px; font-weight:600;">No results found</p>`;
-    return;
-  }
+  // Load total into checkout payable
+  const total = Object.entries(cart).reduce((sum, [id, qty]) => {
+    const p = products.find(pr => pr.id == id);
+    return sum + (p.price * qty);
+  }, 0);
 
-  // Show search results (NO SEARCH TITLE)
-  categoryProducts.innerHTML = filtered.map(item => `
-    <div class="product-card">
-      <img src="${item.img}" alt="${item.name}">
-      <h4>${item.name}</h4>
-      <div class="price-row">
-        <p class="price">${item.price}</p>
-      </div>
-      <div class="bottom-row">
-        <span class="stars">⭐⭐⭐⭐⭐</span>
-        <button class="cart-btn"><i data-feather="shopping-cart">🛒</i></button>
-      </div>
-    </div>
-  `).join("");
+  document.getElementById("checkout-payable").textContent = total.toLocaleString();
 
-  feather.replace();
+  // Open checkout modal AFTER cart hides
+  setTimeout(() => {
+    openModal(document.getElementById("modal-checkout"));
+  }, 350); // matches your cart closing animation speed
 });
 
-feather.replace();
 
 
-// ================== CART SYSTEM ===================
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+/* =======================================================
+   PLACE ORDER SYSTEM
+======================================================= */
+document.getElementById("checkout-form").addEventListener("submit", function(e) {
+  e.preventDefault();
 
-// Update cart number on page load
-updateCartCount();
+  const deliveryMethod = document.querySelector("input[name='deliveryMethod']:checked");
+  if (!deliveryMethod) {
+    document.getElementById("checkout-error").textContent =
+      "Please select delivery method.";
+    return;
+  }
 
-// Listen for ANY .cart-btn click (works on dynamic content)
-document.addEventListener("click", function (e) {
-
-  const btn = e.target.closest(".cart-btn");
-  if (!btn) return;
-
-  const card = btn.closest(".product-card");
-  if (!card) return;
-
-  const item = {
-    name: card.querySelector("h4").textContent,
-    price: card.querySelector(".price").textContent,
-    img: card.querySelector("img").src
+  const order = {
+    id: Date.now(),
+    user: JSON.parse(localStorage.getItem("almadinaUser")),
+    items: Object.entries(cart),
+    date: new Date().toLocaleString(),
+    total: parseInt(
+      document.getElementById("checkout-payable").textContent.replace(/,/g, "")
+    ),
+    method: deliveryMethod.value
   };
 
-  // Add item to array
-  cart.push(item);
+  // Save order
+  let orders = JSON.parse(localStorage.getItem("almadinaOrders") || "[]");
+  orders.push(order);
+  localStorage.setItem("almadinaOrders", JSON.stringify(orders));
 
-  // Save in localStorage
-  localStorage.setItem("cart", JSON.stringify(cart));
+  // Clear cart
+  cart = {};
+  saveCart();
+  updateCartBadge();
+  renderCart();
 
-  // Update top cart count
-  updateCartCount();
+  // Close modal
+  document.getElementById("modal-checkout").style.display = "none";
 
-  alert(item.name + " added to cart!");
+  // Success popup
+  alert(
+    `Order Successful!\n\nOrder ID: ${order.id}\nTotal Paid: ₦${order.total.toLocaleString()}`
+  );
 });
 
-// ========== Update Cart Count ==========
-function updateCartCount() {
-  const headerCount = document.getElementById("cart-count");
-  const drawerCount = document.querySelector(".drawer-cart-count");
 
-  if (headerCount) headerCount.textContent = cart.length;
-  if (drawerCount) drawerCount.textContent = cart.length;
-}
+// DELIVERY METHOD TOGGLE
+document.querySelectorAll("input[name='deliveryMethod']").forEach(option => {
+  option.addEventListener("change", () => {
+    const method = option.value;
 
-updateCartCount();
+    const deliveryFields = document.getElementById("delivery-fields");
+    const paymentFields = document.getElementById("payment-fields");
+
+    if (method === "pickup") {
+      deliveryFields.style.display = "none";
+      paymentFields.style.display = "none";
+    }
+
+    else if (method === "payondelivery") {
+      deliveryFields.style.display = "block";
+      paymentFields.style.display = "none";
+    }
+
+    else if (method === "delivery") {
+      deliveryFields.style.display = "block";
+      paymentFields.style.display = "block";
+    }
+  });
+});
+
+
+
 
