@@ -1,4 +1,3 @@
-
 /* ============================================================
    COMPLETE CART + CATEGORIES + SEARCH + PRODUCTS ARRAY
    FOR AL-MADINA STORE — FULL WORKING SCRIPT.JS
@@ -150,12 +149,14 @@ const products = [
 {id:129,category:"Electronics",name:"Samsung S23 Ultra",price:1700000,img:"Img/samsung s23 ultra.jpg"},
 {id:130,category:"Electronics",name:"Sony Headset",price:17000,img:"Img/sony headset.jpg"},
 {id:131,category:"Electronics",name:"iPhone 16",price:960000,img:"Img/iphone 16.jpg"},
-{id:132,category:"Electronics",name:"Apple Watch",price:120000,img:"Img/Apple watch.jpg"}
+{id:132,category:"Electronics",name:"Apple Watch",price:120000,img:"Img/Apple watch.jpg"},
+{ id: 200, category: "Fashion", name: "Black Shoe", price: 25000, img: "Img/shoe.jpg" },
+
 ];
 
 
 
-/* 6. NAVIGATION DRAWER (MOBILE) */
+/* 2. NAVIGATION DRAWER (MOBILE) */
 const menuBtn = document.getElementById('menuBtn');
 const navDrawer = document.getElementById('navDrawer');
 const closeDrawer = document.getElementById('closeDrawer');
@@ -250,13 +251,13 @@ document.getElementById("register-form").addEventListener("submit", e => {
 
   let hasError = false;
 
-  if (firstname.length < 5) {
-    firstnameError.textContent = "First name must be at least 3 letters.";
+  if (firstname.length < 4) {
+    firstnameError.textContent = "First name must be at least 4 letters.";
     hasError = true;
   }
 
-  if (lastname.length < 4) {
-    lastnameError.textContent = "Last name must be at least 2 letters.";
+  if (lastname.length < 3) {
+    lastnameError.textContent = "Last name must be at least 3 letters.";
     hasError = true;
   }
 
@@ -325,25 +326,27 @@ function showUserLoggedIn(user) {
 
   headerAuth.innerHTML = `
     <div class="user-menu">
-      <span>👤 ${user.firstname}</span>
+      <button id="profile-open" class="btn profile-btn">👤 ${user.firstname}</button>
       <button class="btn logout-btn" id="logout-desktop">Logout</button>
     </div>
   `;
 
   drawerAuth.innerHTML = `
     <div class="user-menu">
-      <span>${user.firstname} ${user.lastname}</span>
+      <button id="profile-open" class="btn profile-btn">👤 ${user.firstname} ${user.lastname}</button>
       <button class="btn logout-btn" id="logout-mobile">Logout</button>
     </div>
   `;
 
-  // Bind events after inserting into DOM
-  document.getElementById("logout-desktop")
-    .addEventListener("click", logoutUser);
+  document.getElementById("logout-desktop").addEventListener("click", logoutUser);
+  document.getElementById("logout-mobile").addEventListener("click", logoutUser);
 
-  document.getElementById("logout-mobile")
-    .addEventListener("click", logoutUser);
+  // ADD THIS:
+  document.querySelectorAll("#profile-open").forEach(btn => {
+    btn.addEventListener("click", openProfile);
+  });
 }
+
 
 
 function logoutUser() {
@@ -352,6 +355,7 @@ function logoutUser() {
 }
 
 
+/* 4. REVEAL ON SCROLL */
 
 document.addEventListener("DOMContentLoaded", () => {
   
@@ -384,10 +388,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-/*******************************
-   SIMPLE FIXED CART SYSTEM
-   (MATCHING YOUR HTML EXACTLY)
-********************************/
+/* 4. CART SYSTEM */
 
 // ====== SELECT ELEMENTS ======
 const cartEl = document.getElementById("cart");
@@ -490,7 +491,7 @@ function renderCart() {
     `;
   });
 
-  // 🔥 FIXED TOTAL
+  //  TOTAL
   cartTotalEl.textContent = total.toLocaleString();
 }
 
@@ -579,9 +580,7 @@ categoryButtons.forEach(btn => {
 });
 
 
-/* =======================================================
-   CHECKOUT BUTTON → OPEN CHECKOUT MODAL
-======================================================= */
+/* 5. CHECKOUT BUTTON → OPEN CHECKOUT MODAL */
 checkoutBtn.addEventListener("click", () => {
   const user = JSON.parse(localStorage.getItem("almadinaUser") || "null");
 
@@ -598,7 +597,9 @@ checkoutBtn.addEventListener("click", () => {
   // Load total into checkout payable
   const total = Object.entries(cart).reduce((sum, [id, qty]) => {
     const p = products.find(pr => pr.id == id);
+    if (!p) return sum; // prevent crash
     return sum + (p.price * qty);
+
   }, 0);
 
   document.getElementById("checkout-payable").textContent = total.toLocaleString();
@@ -611,9 +612,7 @@ checkoutBtn.addEventListener("click", () => {
 
 
 
-/* =======================================================
-   PLACE ORDER SYSTEM
-======================================================= */
+/* 6.  PLACE ORDER SYSTEM  */
 document.getElementById("checkout-form").addEventListener("submit", function(e) {
   e.preventDefault();
 
@@ -624,11 +623,21 @@ document.getElementById("checkout-form").addEventListener("submit", function(e) 
     return;
   }
 
+  // Convert cart into readable order items
+  const orderItems = Object.entries(cart).map(([id, qty]) => {
+    const product = products.find(p => p.id == id);
+    return {
+      name: product.name,
+      qty: qty,
+      price: product.price
+    };
+  });
+
   const order = {
     id: Date.now(),
-    user: JSON.parse(localStorage.getItem("almadinaUser")),
-    items: Object.entries(cart),
-    date: new Date().toLocaleString(),
+    email: JSON.parse(localStorage.getItem("almadinaUser")).email,
+    items: orderItems,
+    ts: Date.now(),
     total: parseInt(
       document.getElementById("checkout-payable").textContent.replace(/,/g, "")
     ),
@@ -649,7 +658,6 @@ document.getElementById("checkout-form").addEventListener("submit", function(e) 
   // Close modal
   document.getElementById("modal-checkout").style.display = "none";
 
-  // Success popup
   alert(
     `Order Successful!\n\nOrder ID: ${order.id}\nTotal Paid: ₦${order.total.toLocaleString()}`
   );
@@ -681,6 +689,73 @@ document.querySelectorAll("input[name='deliveryMethod']").forEach(option => {
   });
 });
 
+const profileModal = document.getElementById('modal-profile');
 
+// Fix LS KEYS
+const LS_KEYS = {
+  SESSION: "almadinaUser",
+  ORDERS: "almadinaOrders"
+};
 
+function getSession() {
+  const raw = localStorage.getItem(LS_KEYS.SESSION);
+  return raw ? JSON.parse(raw) : null;
+}
 
+function getOrders() {
+  return JSON.parse(localStorage.getItem(LS_KEYS.ORDERS) || "[]");
+}
+
+document.addEventListener("click", e => {
+  if (e.target.id === "profile-open") {
+    openProfile();
+  }
+});
+
+function openProfile() {
+  const session = getSession();
+  if (!session) {
+    openModal(loginModal);
+    return;
+  }
+
+  // Show full name
+  document.getElementById("prof-name").textContent =
+    session.firstname + " " + session.lastname;
+
+  document.getElementById("prof-email").textContent = session.email;
+
+  // Load all orders for this user
+  const orders = getOrders()
+    .filter(o => o.email === session.email)
+    .sort((a, b) => b.ts - a.ts);
+
+  const tbody = document.getElementById("orders-tbody");
+  tbody.innerHTML = "";
+
+  if (orders.length === 0) {
+    document.getElementById("orders-empty").style.display = "block";
+    document.getElementById("orders-table").style.display = "none";
+  } else {
+    document.getElementById("orders-empty").style.display = "none";
+    document.getElementById("orders-table").style.display = "table";
+
+    orders.forEach(o => {
+      const tr = document.createElement("tr");
+
+      const itemsStr = o.items
+        .map(i => `${i.name} x${i.qty}`)
+        .join(", ");
+
+      tr.innerHTML = `
+        <td>${new Date(o.ts).toLocaleString()}</td>
+        <td>${itemsStr}</td>
+        <td>₦${o.total.toLocaleString()}</td>
+      `;
+
+      tbody.appendChild(tr);
+    });
+  }
+
+  openModal(profileModal);
+}

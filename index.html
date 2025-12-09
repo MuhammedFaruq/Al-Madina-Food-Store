@@ -27,7 +27,8 @@
   <nav class="header-nav" id="nav-menu">
     <ul>
       <li><a href="#home">Home</a></li>
-      <li><a href="#doctors">Menu</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li id="user-controls" class="hidden">
 
       <!-- DESKTOP CART BUTTON (ONLY ONE) -->
       <li>
@@ -53,8 +54,7 @@
     <span class="close-drawer" id="closeDrawer">&times;</span>
 
     <a href="#home">Home</a>
-    <a href="#doctors">Menu</a>
-
+    <a href="#menu">Menu</a>
     <!-- MOBILE CART BUTTON -->
     <a href="#" id="cartButtonMobile" class="cart-mobile">
       🛒 <span id="cartCountMobile">0</span>
@@ -132,7 +132,7 @@
   </div>
 </div>
 
-
+<!-- ================= CART SYSTEM ================= -->
 <aside class="cart" id="cart">
   <h3>Your Cart</h3>
   <div id="cart-items"></div>
@@ -401,6 +401,34 @@
 </div>
 
 
+<div class="modal" id="modal-profile" aria-hidden="true" role="dialog" aria-labelledby="profile-title">
+  <div class="modal-content">
+    <button class="modal-close" data-close="modal-profile">✕</button>
+    <h3 id="profile-title">My Profile & Orders</h3>
+
+    <section class="profile-block">
+      <h4>Profile</h4>
+      <div class="profile-row"><strong>Name:</strong> <span id="prof-name"></span></div>
+      <div class="profile-row"><strong>Email:</strong> <span id="prof-email"></span></div>
+    </section>
+
+    <section class="orders-block">
+      <h4>Order History</h4>
+      <div id="orders-empty" class="muted">No orders yet.</div>
+      <table id="orders-table" class="orders-table">
+        <thead>
+          <tr><th>Date</th><th>Items</th><th>Total ₦</th></tr>
+        </thead>
+        <tbody id="orders-tbody"></tbody>
+      </table>
+    </section>
+  </div>
+</div>
+
+
+
+
+
   <!-- ================= ABOUT US ================= -->
 <section class="about container" id="about"><br><br>
   <h3 class="section-title" align="center">About Al-Madina Store</h3>
@@ -422,7 +450,7 @@
     </div>
 
     <div class="about-img">
-      <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd" class="reveal-right">
+      <img src="Img/delivery gut hero.jpg" class="reveal-right">
     </div>
   </div>
 </section>

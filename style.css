@@ -52,9 +52,7 @@ header h1 {
   font-size: 1.7rem;
 }
 
-.logo img{
-  
-}
+
 
 nav ul {
   display: flex;
@@ -217,23 +215,48 @@ nav a:hover {
   
 }
 
+
 /* HERO SECTION */
 .hero {
   width: 100%;
-  background: url("https://images.unsplash.com/photo-1504674900247-0877df9cc836") center/cover no-repeat;
-  padding: 80px 0 50px;   /* smaller hero height */
+  height: 55vh;
+  background-image: url("Img/delivery gut hero.jpg");
+  background-repeat: repeat;       /* make image repeat */
+  background-size: contain;        /* no zoom */
+  background-position: top center;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+
+/* Content inside hero */
 .hero-content {
   width: 90%;
   max-width: 600px;
   margin: auto;
   color: #fff;
 }
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+  .hero {
+    background-repeat: no-repeat;
+    background-size: cover;     /* fill screen */
+    background-position: center;
+    height: 32vh;
+  }
+
+  .hero-content h2 {
+    font-size: 1.3rem;
+  }
+
+  .hero-content p {
+    font-size: 0.85rem;
+  }
+}
+
 
 /* SEARCH BOX INSIDE HERO */
 .search-box {
@@ -547,7 +570,7 @@ nav a:hover {
 }
 
 .about-img img {
-  width: 100%;
+  width: 87%;
   height: 300px;
   border-radius: 14px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -983,7 +1006,7 @@ copyright {
   background: #d63b3b;
 }
 
-/* ================= CART TOTAL + CHECKOUT (FIXED) ================= */
+/* ================= CART TOTAL + CHECKOUT ================= */
 .cart-total {
   font-size: 1.25rem;
   font-weight: 600;
@@ -1154,7 +1177,7 @@ copyright {
 /* Inputs + fieldsets */
 #modal-checkout fieldset {
   border: 1px solid #ccc;
-  padding: 12px;
+  padding: 38px;
   border-radius: 10px;
   margin-bottom: 1rem;
   background: #fafafa;
@@ -1169,7 +1192,7 @@ copyright {
 #modal-checkout label {
   display: block;
   margin-bottom: 10px;
-  font-size: 0.9rem;
+  font-size: 0.872rem;
 }
 
 #modal-checkout input {
@@ -1229,3 +1252,46 @@ copyright {
 #modal-checkout {
   z-index: 200000 !important;
 }
+
+
+.profile-block, .orders-block { margin-top: 1rem; }
+.profile-row { margin: 0.25rem 0; }
+.muted { color: #777; }
+.orders-table { width: 100%; border-collapse: collapse; margin-top: 0.5rem; }
+.orders-table th, .orders-table td { border: 1px solid #0e0d0d; padding: 0.5rem; text-align: left; }
+.orders-table th { background: #fafafa; }
+
+.modal {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.45);
+  display: none; align-items: center; justify-content: center; padding: 1rem; z-index: 1100;
+}
+.modal[aria-hidden="false"] { display: flex; }
+.modal-content {
+  background: #fff; width: 100%; max-width: 420px; border-radius: 10px; padding: 1rem 1.25rem; position: relative;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+.modal-close {
+  position: absolute; top: 10px; right: 10px; border: none; background: transparent; font-size: 1.1rem; cursor: pointer;
+}
+.profile-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#orders-tbody {
+  display: block;
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+.orders-table thead,
+.orders-table tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  font-size: 0.76rem;
+}
+
