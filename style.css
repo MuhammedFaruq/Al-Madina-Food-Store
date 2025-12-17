@@ -1255,11 +1255,34 @@ copyright {
 
 
 .profile-block, .orders-block { margin-top: 1rem; }
-.profile-row { margin: 0.25rem 0; }
-.muted { color: #777; }
-.orders-table { width: 100%; border-collapse: collapse; margin-top: 0.5rem; }
-.orders-table th, .orders-table td { border: 1px solid #0e0d0d; padding: 0.5rem; text-align: left; }
-.orders-table th { background: #fafafa; }
+.profile-row { 
+  margin: 0.25rem 0;
+   font-family: 'Gill Sans';
+   font-size: 1.3rem; 
+}
+.muted {
+   color: #0f0f0f;
+   }
+
+
+.orders-table { 
+  width: 100%;
+  border-collapse: collapse;
+ margin-top: 0.5rem;
+ }
+
+.orders-table th, .orders-table td { 
+  border: 1px solid #0e0d0d;
+  padding: 0.5rem;
+  text-align: left; 
+  }
+
+.orders-table th { background: #022c19ea; 
+  color: #fff;
+  font-family:  monospace;
+  font-size: 1rem;
+
+ }
 
 .modal {
   position: fixed; inset: 0; background: rgba(0,0,0,0.45);
@@ -1267,11 +1290,17 @@ copyright {
 }
 .modal[aria-hidden="false"] { display: flex; }
 .modal-content {
-  background: #fff; width: 100%; max-width: 420px; border-radius: 10px; padding: 1rem 1.25rem; position: relative;
+  background: #dad7d7; width: 100%; max-width: 420px; border-radius: 10px; padding: 1rem 1.25rem; position: relative;
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 .modal-close {
-  position: absolute; top: 10px; right: 10px; border: none; background: transparent; font-size: 1.1rem; cursor: pointer;
+  position: absolute;
+  top: 10px; right: 10px;
+  border: none;
+  background: transparent; 
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #000;
 }
 .profile-btn {
   background: transparent;
@@ -1293,5 +1322,7 @@ copyright {
   width: 100%;
   table-layout: fixed;
   font-size: 0.76rem;
+  color: #000;
+  font-weight: 500;
 }
 
