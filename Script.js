@@ -1,17 +1,20 @@
 /* ============================================================
    COMPLETE CART + CATEGORIES + SEARCH + PRODUCTS ARRAY
    FOR AL-MADINA STORE — FULL WORKING SCRIPT.JS
-   JUST PASTE THIS FILE AND DELETE YOUR OLD SCRIPT.JS
-   ============================================================ */
+ ============================================================ */
+
+
 
 /* ----------- PRODUCTS ARRAY (FULL FROM YOUR MESSAGE) ----------- */
 const products = [
+  /* ---- Chicken ---- */
   { id: 1, category: "Chicken", name: "Full Chicken Pack", price: 8000, img: "Img/Chicken 2.jpg" },
   { id: 2, category: "Chicken", name: "Chicken Wings", price: 3200, img: "Img/Chicken wig.jpg" },
   { id: 3, category: "Chicken", name: "Chicken Leg", price: 3200, img: "Img/chicken leg.jpg" },
   { id: 4, category: "Chicken", name: "Chicken laps", price: 3200, img: "Img/chicken laps.jpg" },
   { id: 5, category: "Chicken", name: "Chicken Full", price: 8000, img: "Img/chicken 2.jpg" },
 
+  /* ---- ice cream ---- */
   { id: 6, category: "Ice Cream", name: "Ice Cream", price: 1500, img: "Img/ice cream1.jpg" },
   { id: 7, category: "Ice Cream", name: "Ice Cream", price: 1500, img: "Img/ice cream2.jpg" },
   { id: 8, category: "Ice Cream", name: "Ice Cream", price: 1500, img: "Img/ice cream3.jpg" },
@@ -21,6 +24,7 @@ const products = [
   { id: 12, category: "Ice Cream", name: "Ice Cream", price: 1500, img: "Img/saudia ice cream2.jpg" },
   { id: 13, category: "Ice Cream", name: "Ice Cream", price: 1500, img: "Img/saudia ice cream3.jpg" },
 
+  /* ---- Drinks ---- */
   { id: 14, category: "Drinks", name: "5alive Juice", price: 1500, img: "Img/5alive.jpg" },
   { id: 15, category: "Drinks", name: "Coca-Cola", price: 500, img: "Img/cocacola2.jpg" },
   { id: 16, category: "Drinks", name: "Sprite", price: 500, img: "Img/sprite.jpg" },
@@ -36,7 +40,7 @@ const products = [
   /* ---- Food Groceries ----- */
 {id:31,category:"Food groceries",name:"Onions Leaf",price:1000,img:"Img/onions leaf.jpg"},
 {id:32,category:"Food groceries",name:"Pepper",price:1200,img:"Img/pepper.jpg"},
-{id:33,category:"Food groceries",name:"Rice",price:55000,img:"Img/rice.jpg"},
+{id:33,category:"Food groceries",name:"Rice",price:48000,img:"Img/rice.jpg"},
 {id:34,category:"Food groceries",name:"Peas and Carrot",price:7400,img:"Img/peas and carrot.jpg"},
 {id:35,category:"Food groceries",name:"Randa Spagetti",price:3500,img:"Img/randa spa.jpg"},
 {id:36,category:"Food groceries",name:"Titus Sandy",price:1500,img:"Img/sandy 1.jpg"},
@@ -51,12 +55,12 @@ const products = [
 {id:45,category:"Food groceries",name:"Gino Tomatoes",price:250,img:"Img/gino tomatoes1.jpg"},
 {id:46,category:"Food groceries",name:"Ginger",price:500,img:"Img/ginger.jpg"},
 {id:47,category:"Food groceries",name:"Egg Pack",price:5400,img:"Img/egg.jpg"},
-{id:48,category:"Food groceries",name:"Curry",price:1700,img:"Img/curry.jpg"},
-{id:49,category:"Food groceries",name:"Cucumber",price:1400,img:"Img/cucumber 2.jpg"},
+{id:48,category:"Food groceries",name:"Curry",price:700,img:"Img/curry.jpg"},
+{id:49,category:"Food groceries",name:"Cucumber",price:400,img:"Img/cucumber 2.jpg"},
 {id:50,category:"Food groceries",name:"Banana",price:1000,img:"Img/banana1.jpg"},
 {id:51,category:"Food groceries",name:"Yam",price:3500,img:"Img/yam 1.jpg"},
 {id:52,category:"Food groceries",name:"Sweet Potatoes",price:5000,img:"Img/sweet potatoes.jpg"},
-{id:53,category:"Food groceries",name:"Fresh Tomatoes",price:5000,img:"Img/tomatoes.jpg"},
+{id:53,category:"Food groceries",name:"Fresh Tomatoes",price:1000,img:"Img/tomatoes.jpg"},
 {id:54,category:"Food groceries",name:"Okaro",price:700,img:"Img/okaro.jpg"},
 {id:55,category:"Food groceries",name:"Maggi Star",price:1500,img:"Img/maggi.jpg"},
 {id:56,category:"Food groceries",name:"Indomie",price:8500,img:"Img/indomie 1.jpg"},
@@ -658,9 +662,17 @@ document.getElementById("checkout-form").addEventListener("submit", function(e) 
   // Close modal
   document.getElementById("modal-checkout").style.display = "none";
 
-  alert(
-    `Order Successful!\n\nOrder ID: ${order.id}\nTotal Paid: ₦${order.total.toLocaleString()}`
-  );
+ // Show success modal
+document.getElementById("success-order-id").textContent = order.id;
+document.getElementById("success-order-total").textContent =
+  order.total.toLocaleString();
+
+openModal(document.getElementById("modal-success"));
+
+document.getElementById("success-close").addEventListener("click", () => {
+  closeModal(document.getElementById("modal-success"));
+});
+
 });
 
 

@@ -356,6 +356,67 @@ nav a:hover {
   }
 }
 
+.categories {
+  margin-top: 1rem;
+}
+
+.menu-grid {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding-bottom: 0.8rem;
+}
+
+/* CATEGORY BUBBLE */
+.cat-btn {
+  cursor: pointer;
+  padding: 6px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* IMAGE */
+.cat-btn img {
+  width: 110%;
+  height: 110%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* HIDE TEXT BUT KEEP FOR JS */
+.cat-btn span {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* HOVER EFFECT */
+.cat-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.35);
+}
+
+/* MOBILE */
+@media (max-width: 720px) {
+  .cat-btn {
+    width: 58px;
+    height: 58px;
+  }
+
+  .section-title {
+    font-size: 1rem;
+  }
+}
+
+
 
 
 /* CART BADGE */
@@ -1326,3 +1387,43 @@ copyright {
   font-weight: 500;
 }
 
+
+
+/* SUCCESS MODAL */
+.success-modal {
+  text-align: center;
+  max-width: 360px;
+}
+
+.success-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 10px;
+  background: #22c55e;
+  color: white;
+  font-size: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.success-sub {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.success-box {
+  background: #f9fafb;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 1.2rem;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.success-box div {
+  margin-bottom: 6px;
+}

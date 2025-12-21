@@ -163,23 +163,68 @@
 
   <!-- ================= CATEGORIES ================= -->
   <section class="categories container">
-    <h3 class="section-title reveal-right">Explore Categories</h3>
+  <h3 class="section-title reveal-right">Explore Categories</h3>
 
-    <div class="menu-grid">
-      <button class="cat-btn reveal">Chicken</button>
-      <button class="cat-btn reveal">Food groceries</button>
-      <button class="cat-btn reveal">Drinks</button>
-      <button class="cat-btn reveal">Fruit</button>
-      <button class="cat-btn reveal">Cosmetics</button>
-      <button class="cat-btn reveal">Fish</button>
-      <button class="cat-btn reveal">Ice Cream</button>
-      <button class="cat-btn reveal">Meat</button>
-      <button class="cat-btn reveal">Provision</button>
-      <button class="cat-btn reveal">Bakery</button>
-      <button class="cat-btn reveal">Electronics</button>
+  <div class="menu-grid">
 
-    </div>
-  </section>
+    <button class="cat-btn reveal">
+      <img src="Img/Chicken 1.jpg" alt="Chicken">
+      <span>Chicken</span>
+    </button>
+
+    <button class="cat-btn reveal">
+      <img src="Img/custard 1.jpg" alt="Food groceries">
+      <span>Food groceries</span>
+    </button>
+
+    <button class="cat-btn reveal">
+      <img src="Img/almaria milk.jpg" alt="Drinks">
+      <span>Drinks</span>
+    </button>
+
+    <button class="cat-btn reveal">
+      <img src="Img/carrot.jpg" alt="Fruit">
+      <span>Fruit</span>
+    </button>
+
+    <button class="cat-btn reveal">
+      <img src="Img/nivea cream.jpg" alt="Cosmetics">
+      <span>Cosmetics</span>
+    </button>
+
+    <button class="cat-btn reveal">
+      <img src="Img/fish2.jpg" alt="Fish">
+      <span>Fish</span>
+    </button>
+
+    <button class="cat-btn reveal">
+      <img src="Img/saudia ice cream.jpg" alt="Ice Cream">
+      <span>Ice Cream</span>
+    </button>
+
+    <button class="cat-btn reveal">
+      <img src="Img/meat 3.jpg" alt="Meat">
+      <span>Meat</span>
+    </button>
+
+    <button class="cat-btn reveal">
+      <img src="Img/nescafe 2.jpg" alt="Provision">
+      <span>Provision</span>
+    </button>
+
+    <button class="cat-btn reveal">
+      <img src="Img/slices bread2.jpg" alt="Bakery">
+      <span>Bakery</span>
+    </button>
+
+    <button class="cat-btn reveal">
+      <img src="Img/Apple watch ultra.jpg" alt="Electronics">
+      <span>Electronics</span>
+    </button>
+
+  </div>
+</section>
+
   <!-- ================= FILTERED PRODUCTS ================= -->
 <section class="filtered-products container">
   <h3 class="section-title" id="category-title"></h3>
@@ -227,8 +272,8 @@
       <img src="Img/tomatoes.jpg" alt="Tomatoes">
       <h4>Red Tomatoes</h4>
       <div class="price-row">
-        <span class="price">₦5000</span>
-        <span class="old-price">₦6200</span>
+        <span class="price">₦1000</span>
+        <span class="old-price">₦1200</span>
       </div>
       <div class="bottom-row">
         <div class="stars">★★★★★</div>
@@ -250,7 +295,7 @@
       </div>
     </div>
 
-    <!-- Shoe (NOT in your array — ADDING ID 200 manually) -->
+    <!-- Shoe (ID 200) -->
     <div class="product-card reveal-zoom">
       <img src="Img/shoe.jpg" alt="Black Shoe">
       <h4>Black Shoe</h4>
@@ -283,8 +328,8 @@
       <img src="Img/cucumber 2.jpg" alt="Cucumber">
       <h4>Cucumber</h4>
       <div class="price-row">
-        <span class="price">₦1400</span>
-        <span class="old-price">₦3000</span>
+        <span class="price">₦400</span>
+        <span class="old-price">₦600</span>
       </div>
       <div class="bottom-row">
         <div class="stars">★★★★★</div>
@@ -297,8 +342,8 @@
       <img src="Img/carrot.jpg" alt="Carrot">
       <h4>Carrot</h4>
       <div class="price-row">
-        <span class="price">₦1500</span>
-        <span class="old-price">₦2500</span>
+        <span class="price">₦500</span>
+        <span class="old-price">₦850</span>
       </div>
       <div class="bottom-row">
         <div class="stars">★★★★★</div>
@@ -400,6 +445,7 @@
   </div>
 </div>
 
+ <!-- PROFILE AND ORDER -->
 
 <div class="modal" id="modal-profile" aria-hidden="true" role="dialog" aria-labelledby="profile-title">
   <div class="modal-content">
@@ -426,6 +472,26 @@
 </div>
 
 
+<!-- ORDER SUCCESS MODAL -->
+<div class="modal" id="modal-success" aria-hidden="true">
+  <div class="modal-content success-modal">
+
+    <div class="success-icon">✓</div>
+
+    <h3>Order Successful</h3>
+    <p class="success-sub">Thank you for your order 🎉</p>
+
+    <div class="success-box">
+      <div><strong>Order ID:</strong> <span id="success-order-id"></span></div>
+      <div><strong>Total Paid:</strong> ₦<span id="success-order-total"></span></div>
+    </div>
+
+    <button class="btn btn-primary" id="success-close">Continue Shopping</button>
+
+  </div>
+</div>
+
+
 
 
 
@@ -435,16 +501,17 @@
 
   <div class="about-grid">
     <div class="about-text reveal-left">
-      <h4>Your Trusted Food Delivery Service</h4>
+      <h4>Your Trusted Al-Madina Delivery Service</h4>
       <p>
-        FoodieExpress is dedicated to bringing you the best meals from your favorite restaurants—
-        fresh, fast, and affordable. We partner with trusted chefs and kitchens to ensure 
-        every meal delivered meets our high-quality standards.
+        Al-Madina Store is dedicated to bringing you the best Items from your favorite product
+        fresh, fast, and affordable. We partner with trusted Management and Staffs to ensure 
+        every product delivered meets our high-quality standards.
       </p>
 
       <p>
-        With advanced technology, reliable riders, and a passion for good food, we make meal delivery 
-        simple, fast, and enjoyable. Whether you're craving pizza, burgers, shawarma, or rice dishes—
+        With advanced technology, reliable riders, and a passion for good product, we also make delivery 
+        simple, fast, and enjoyable. Whether you're craving to buy a product from Al-Madina store, Food groceries,
+        Drinks, phones, or ice-cream
         we’ve got you covered!
       </p>
     </div>
@@ -524,7 +591,7 @@
 
       <div>
         <h4>About</h4>
-        <p>Fast, fresh meals delivered straight to your home.</p>
+        <p>Fast, fresh product delivered straight to your home.</p>
       </div>
 
       <div>
@@ -546,7 +613,7 @@
 
     </div>
 
-    <p class="copyright">© 2025 FoodieExpress. All rights reserved.</p>
+    <p class="copyright">© 2025 Al-Madina. All rights reserved.</p>
   </footer>
 
 </body>
