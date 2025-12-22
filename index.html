@@ -18,6 +18,7 @@
 
   <div class="header-top">
     <div class="logo reveal-left">Al-Madina Store</div>
+    <button id="track-open" class="btn">Track Order</button>
 
     <!-- Mobile Menu Button -->
     <button class="mobile-menu-btn" id="menuBtn">☰</button>
@@ -490,6 +491,32 @@
 
   </div>
 </div>
+
+
+<!-- Track Order Modal -->
+<div class="modal" id="modal-track" aria-hidden="true">
+  <div class="modal-content">
+    <button class="modal-close" data-close="modal-track">✕</button>
+    <h3>Track Your Order</h3>
+
+    <form id="track-form">
+      <label>Enter Order ID</label>
+      <input type="text" id="track-order-id" required />
+
+      <button type="submit" class="btn-primary">Track Order</button>
+    </form>
+
+    <div id="track-result" style="display:none; margin-top:1rem;">
+      <p><strong>Status:</strong> <span id="track-status"></span></p>
+      <p><strong>Total:</strong> ₦<span id="track-total"></span></p>
+      <p><strong>Delivery:</strong> <span id="track-method"></span></p>
+      <p><strong>Date:</strong> <span id="track-date"></span></p>
+    </div>
+
+    <p id="track-error" class="error-text"></p>
+  </div>
+</div>
+
 
 
 

@@ -638,15 +638,17 @@ document.getElementById("checkout-form").addEventListener("submit", function(e) 
   });
 
   const order = {
-    id: Date.now(),
-    email: JSON.parse(localStorage.getItem("almadinaUser")).email,
-    items: orderItems,
-    ts: Date.now(),
-    total: parseInt(
-      document.getElementById("checkout-payable").textContent.replace(/,/g, "")
-    ),
-    method: deliveryMethod.value
-  };
+  id: Date.now(),
+  email: JSON.parse(localStorage.getItem("almadinaUser")).email,
+  items: orderItems,
+  ts: Date.now(),
+  total: parseInt(
+    document.getElementById("checkout-payable").textContent.replace(/,/g, "")
+  ),
+  method: deliveryMethod.value,
+  status: "Processing"  
+};
+
 
   // Save order
   let orders = JSON.parse(localStorage.getItem("almadinaOrders") || "[]");
@@ -700,6 +702,7 @@ document.querySelectorAll("input[name='deliveryMethod']").forEach(option => {
     }
   });
 });
+
 
 const profileModal = document.getElementById('modal-profile');
 
@@ -770,4 +773,61 @@ function openProfile() {
   }
 
   openModal(profileModal);
+}
+
+
+// =====================
+// TRACK ORDER SYSTEM
+// =====================
+
+const trackOpenBtn = document.getElementById("track-open");
+const trackModal   = document.getElementById("modal-track");
+const trackForm    = document.getElementById("track-form");
+
+trackOpenBtn?.addEventListener("click", () => {
+  openModal(trackModal);
+});
+
+trackForm?.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const orderIdInput = document.getElementById("track-order-id").value.trim();
+  const orders = JSON.parse(localStorage.getItem("almadinaOrders") || "[]");
+
+  const resultBox = document.getElementById("track-result");
+  const errorBox  = document.getElementById("track-error");
+
+  errorBox.textContent = "";
+  resultBox.style.display = "none";
+
+  if (!orderIdInput) {
+    errorBox.textContent = "Please enter an order ID.";
+    return;
+  }
+
+  const order = orders.find(o => String(o.id) === orderIdInput);
+
+  if (!order) {
+    errorBox.textContent = "Order not found.";
+    return;
+  }
+
+  // Show result
+  document.getElementById("track-status").textContent = order.status;
+  document.getElementById("track-total").textContent  = order.total.toLocaleString();
+  document.getElementById("track-method").textContent = order.method;
+  document.getElementById("track-date").textContent   =
+    new Date(order.ts).toLocaleString();
+
+  resultBox.style.display = "block";
+});
+
+
+function updateOrderStatus(orderId, newStatus) {
+  let orders = JSON.parse(localStorage.getItem("almadinaOrders") || "[]");
+  const order = orders.find(o => o.id === orderId);
+  if (!order) return;
+
+  order.status = newStatus;
+  localStorage.setItem("almadinaOrders", JSON.stringify(orders));
 }
