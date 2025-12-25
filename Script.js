@@ -72,6 +72,13 @@ const products = [
 {id:62,category:"Food groceries",name:"Small Peak Milk",price:1300,img:"Img/peak tin milk 2.jpg"},
 {id:63,category:"Food groceries",name:"Egg",price:180,img:"Img/single egg.jpg"},
 {id:64,category:"Food groceries",name:"Pringles",price:4500,img:"Img/pringles.jpg"},
+{id:193,category:"Food groceries",name:"Macaroni",price:3000,img:"Img/macaroni.jpeg"},
+{id:194,category:"Food groceries",name:"Rice 50kg",price:3000,img:"Img/rice 50kg.jpeg"},
+{id:195,category:"Food groceries",name:"Tin Tomatoe",price:3000,img:"Img/tin tomatoe .jpeg"},
+{id:196,category:"Food groceries",name:"Rice 25kg",price:3000,img:"Img/rice 25kg.jpeg"},
+{id:197,category:"Food groceries",name:"whole cashews",price:3000,img:"Img/whole cashews.jpeg"},
+
+
 
 /* ----- Fruits ----- */
 {id:65,category:"Fruit",name:"Water Melon",price:1200,img:"Img/water melon1.jpg"},
@@ -101,6 +108,9 @@ const products = [
 {id:87,category:"Cosmetics",name:"Submile",price:2500,img:"Img/submile pef.jpg"},
 {id:88,category:"Cosmetics",name:"Bathing Soap",price:2500,img:"Img/soap.jpg"},
 {id:89,category:"Cosmetics",name:"OMO",price:2500,img:"Img/omo.jpg"},
+{id:190,category:"Cosmetics",name:"Toothbrush",price:3000,img:"Img/toothbrush.jpeg"},
+{id:191,category:"Cosmetics",name:"Shaving stick",price:3000,img:"Img/shaving stick 2.jpeg"},
+{id:192,category:"Cosmetics",name:"Shaving stick",price:3000,img:"Img/shaving stick.jpeg"},
 
 /* ---- Fish ---- */
 {id:90,category:"Fish",name:"Titus Fish",price:1500,img:"Img/fish1.jpg"},
@@ -155,6 +165,92 @@ const products = [
 {id:131,category:"Electronics",name:"iPhone 16",price:960000,img:"Img/iphone 16.jpg"},
 {id:132,category:"Electronics",name:"Apple Watch",price:120000,img:"Img/Apple watch.jpg"},
 { id: 200, category: "Fashion", name: "Black Shoe", price: 25000, img: "Img/shoe.jpg" },
+
+
+/* ---- Toys ---- */
+{id:133,category:"Toys",name:"Toy Car",price:13000,img:"Img/toy car.jpeg"},
+{id:134,category:"Toys",name:"Toy Carterpillar",price:20000,img:"Img/toy carterpillar.jpeg"},
+{id:135,category:"Toys",name:"Toy gun",price:4000,img:"Img/toy gun.jpeg"},
+{id:136,category:"Toys",name:"capt America toy",price:17000,img:"Img/captian America toy.jpeg"},
+{id:137,category:"Toys",name:"Toy pad",price:3000,img:"Img/toy pad.jpeg"},
+{id:138,category:"Toys",name:"spider man toy",price:3000,img:"Img/spider man toy.jpeg"},
+{id:139,category:"Toys",name:"Toy Car",price:3000,img:"Img/toy car 2.jpeg"},
+
+
+/* ---- home and kitchen ---- */
+{id:140,category:"Home and Kitchen",name:"Kettle",price:13000,img:"Img/kettle.jpeg"},
+{id:141,category:"Home and Kitchen",name:"Knife",price:20000,img:"Img/knife .jpeg"},
+{id:142,category:"Home and Kitchen",name:"gas-cooker",price:4000,img:"Img/gas cooker.jpeg"},
+{id:143,category:"Home and Kitchen",name:"Fuck",price:17000,img:"Img/fuck.jpeg"},
+{id:144,category:"Home and Kitchen",name:"Frying Pan",price:3000,img:"Img/fry pan.jpeg"},
+{id:145,category:"Home and Kitchen",name:"Cup ",price:3000,img:"Img/cups.jpeg"},
+{id:146,category:"Home and Kitchen",name:"Blender",price:3000,img:"Img/blender 1.jpeg"},
+{id:147,category:"Home and Kitchen",name:"Cleaning mob",price:3000,img:"Img/cleaning mob.jpeg"},
+{id:148,category:"Home and Kitchen",name:"frying spoon",price:3000,img:"Img/frying spoon.jpeg"},
+{id:149,category:"Home and Kitchen",name:"bucket",price:3000,img:"Img/green bucket.jpeg"},
+{id:150,category:"Home and Kitchen",name:"blender",price:3000,img:"Img/blender 2.jpeg"},
+{id:151,category:"Home and Kitchen",name:"gas lighter",price:3000,img:"Img/lighter 1.jpeg"},
+{id:152,category:"Home and Kitchen",name:"lighter",price:3000,img:"Img/lighter.jpeg"},
+{id:153,category:"Home and Kitchen",name:"gas lighter",price:3000,img:"Img/lighter gas.jpeg"},
+{id:154,category:"Home and Kitchen",name:"Philps Iron",price:3000,img:"Img/philips iron.jpeg"},
+{id:155,category:"Home and Kitchen",name:"Plate",price:3000,img:"Img/plate.jpeg"},
+{id:156,category:"Home and Kitchen",name:"Pot",price:3000,img:"Img/pot .jpeg"},
+
+/* ---- wears ---- */
+{id:157,category:"wears",name:"Black Polo",price:3000,img:"Img/polo tshirt .jpeg"},
+{id:158,category:"wears",name:"Nike Boxer",price:3000,img:"Img/nike boxer.jpeg"},
+{id:159,category:"wears",name:"Men wear",price:3000,img:"Img/men wear.jpeg"},
+{id:160,category:"wears",name:"Men T-Shirt",price:3000,img:"Img/men t-shirt.jpeg"},
+{id:161,category:"wears",name:"Men Boxxer",price:3000,img:"Img/men boxer.jpeg"},
+{id:162,category:"wears",name:"jacket",price:3000,img:"Img/jacket.jpeg"},
+{id:163,category:"wears",name:"Calvin Boxer",price:3000,img:"Img/calvine boxer.jpeg"},
+{id:164,category:"wears",name:"Short",price:3000,img:"Img/black short 2.jpeg"},
+{id:165,category:"wears",name:"Belt",price:3000,img:"Img/belt.jpeg"},
+{id:166,category:"wears",name:"Short",price:3000,img:"Img/black short.jpeg"},
+{id:167,category:"wears",name:"singlet",price:3000,img:"Img/singlet .jpeg"},
+{id:168,category:"wears",name:"short",price:3000,img:"Img/short 2.jpeg"},
+{id:169,category:"wears",name:"Socks",price:3000,img:"Img/soss.jpeg"},
+{id:170,category:"wears",name:"T-Shirt",price:3000,img:"Img/T-shirt 2.jpeg"},
+{id:171,category:"wears",name:"short",price:3000,img:"Img/short 1.jpeg"},
+{id:172,category:"wears",name:"singlet",price:3000,img:"Img/singlet 2.jpeg"},
+{id:173,category:"wears",name:"Cap",price:3000,img:"Img/white cap.jpeg"},
+{id:174,category:"wears",name:"T-Shirt",price:3000,img:"Img/T-shirt.jpeg"},
+{id:175,category:"wears",name:"cap",price:3000,img:"Img/cap.jpeg"},
+{id:176,category:"wears",name:"Luis vutton",price:3000,img:"Img/Luis Vutton glass2.jpg.jpeg"},
+{id:177,category:"wears",name:"T-Shirt",price:3000,img:"Img/T-shirt 3.jpeg"},
+
+
+/* ---- Bags and luggage ---- */
+{id:178,category:"Bag & luggage",name:"Luis Vutton bag",price:3000,img:"Img/luis vutton bag.jpeg"},
+{id:179,category:"Bag & luggage",name:"Laptop bag",price:3000,img:"Img/laptop bag.jpeg"},
+{id:180,category:"Bag & luggage",name:"Gucci bag",price:3000,img:"Img/gucci bag.jpeg"},
+{id:181,category:"Bag & luggage",name:"Box Luggage",price:3000,img:"Img/laugage 4.jpeg"},
+{id:182,category:"Bag & luggage",name:"Box Luggage",price:3000,img:"Img/laugage 2.jpeg"},
+{id:183,category:"Bag & luggage",name:"Box Luggage",price:3000,img:"Img/laugage 5.jpeg"},
+{id:184,category:"Bag & luggage",name:"School bag",price:3000,img:"Img/black bag.jpeg"},
+{id:185,category:"Bag & luggage",name:"Kids School bag",price:3000,img:"Img/kid school bag.jpeg"},
+{id:186,category:"Bag & luggage",name:"Laptop bag",price:3000,img:"Img/laptop bag 2.jpeg"},
+
+
+/* ---- Towel ---- */
+{id:187,category:"Towel",name:"Towel",price:3000,img:"Img/towel 2.jpeg"},
+{id:188,category:"Towel",name:"Towel",price:3000,img:"Img/towel 3.jpeg"},
+{id:189,category:"Towel",name:"Towel",price:3000,img:"Img/towel 1.jpeg"},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ];
 
@@ -637,16 +733,30 @@ document.getElementById("checkout-form").addEventListener("submit", function(e) 
     };
   });
 
-  const order = {
+  const formData = new FormData(document.getElementById("checkout-form"));
+  
+const order = {
   id: Date.now(),
   email: JSON.parse(localStorage.getItem("almadinaUser")).email,
+
   items: orderItems,
-  ts: Date.now(),
+
   total: parseInt(
     document.getElementById("checkout-payable").textContent.replace(/,/g, "")
   ),
-  method: deliveryMethod.value,
-  status: "Processing"  
+
+  method: formData.get("deliveryMethod"),
+
+  address: {
+    fullName: formData.get("fullName") || "",
+    phone: formData.get("phone") || "",
+    street: formData.get("address1") || "",
+    city: formData.get("city") || "",
+    notes: formData.get("notes") || ""
+  },
+
+  status: "Processing",
+  ts: Date.now()
 };
 
 
