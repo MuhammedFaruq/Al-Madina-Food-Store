@@ -5,7 +5,7 @@
 
 
 
-/* ----------- PRODUCTS ARRAY (FULL FROM YOUR MESSAGE) ----------- */
+/* ----------- PRODUCTS ARRAY ----------- */
 const products = [
   /* ---- Chicken ---- */
   { id: 1, category: "Chicken", name: "Full Chicken Pack", price: 8000, img: "Img/Chicken 2.jpg" },
@@ -72,7 +72,7 @@ const products = [
 {id:62,category:"Food groceries",name:"Small Peak Milk",price:1300,img:"Img/peak tin milk 2.jpg"},
 {id:63,category:"Food groceries",name:"Egg",price:180,img:"Img/single egg.jpg"},
 {id:64,category:"Food groceries",name:"Pringles",price:4500,img:"Img/pringles.jpg"},
-{id:193,category:"Food groceries",name:"Macaroni",price:3000,img:"Img/macaroni.jpeg"},
+{id:193,category:"Food groceries",name:"Macroni",price:3000,img:"Img/macaroni.jpeg"},
 {id:194,category:"Food groceries",name:"Rice 50kg",price:48000,img:"Img/rice 50kg.jpeg"},
 {id:195,category:"Food groceries",name:"Tin Tomatoe",price:3000,img:"Img/tin tomatoe .jpeg"},
 {id:196,category:"Food groceries",name:"Rice 25kg",price:28000,img:"Img/rice 25kg.jpeg"},
@@ -255,7 +255,28 @@ const products = [
 {id:203,category:"Foot-Wear",name:"Jordan Air",price:50000,img:"Img/jordan air yellow.jpeg"},
 {id:204,category:"Foot-Wear",name:"Palms",price:12000,img:"Img/cover pam.jpeg"},
 {id:205,category:"Foot-Wear",name:"Jordan Air",price:50000,img:"Img/jordan air red.jpeg"},
+{id:211,category:"Foot-Wear",name:"Basket-Ball",price:31000,img:"Img/basket ball.jpeg"},
+{id:225,category:"Foot-Wear",name:"Crocs Echo",price:35000,img:"Img/Copper slipers 2.jpeg"},
+{id:226,category:"Foot-Wear",name:"Palm",price:15000,img:"Img/palm slipers1.jpeg"},
+{id:227,category:"Foot-Wear",name:"Palm",price:15000,img:"Img/palm slipers2.jpeg"},
+{id:228,category:"Foot-Wear",name:"Crocs Echo",price:35000,img:"Img/copper 3.jpeg"},
 
+
+
+/* ---- Sportwears ---- */
+{id:212,category:"Sport-Wear",name:"Basket-Ball",price:31000,img:"Img/basket ball 2.jpeg"},
+{id:213,category:"Sport-Wear",name:"Sport Handban",price:5000,img:"Img/handban.jpeg"},
+{id:214,category:"Sport-Wear",name:"Man-City Jessey",price:26000,img:"Img/Mancity jessey 2.jpeg"},
+{id:215,category:"Sport-Wear",name:"Sport Headbumber",price:1000,img:"Img/headbumber 1.jpeg"},
+{id:216,category:"Sport-Wear",name:"Liverpool Jessey",price:21000,img:"Img/Liverpool jessey.jpeg"},
+{id:217,category:"Sport-Wear",name:"Man-City Jessey",price:26000,img:"Img/Mancity jessey 4.jpeg"},
+{id:218,category:"Sport-Wear",name:"Lakers",price:35000,img:"Img/Lakers.jpeg"},
+{id:219,category:"Sport-Wear",name:"Liverpool Jessey",price:21000,img:"Img/liverpool jessey 2.jpeg"},
+{id:220,category:"Sport-Wear",name:"Lakers",price:35000,img:"Img/Lakers 2.jpeg"},
+{id:221,category:"Sport-Wear",name:"Cheseal Jessey",price:23000,img:"Img/Cheseal jessey.jpeg"},
+{id:222,category:"Sport-Wear",name:"Sport Handban",price:3000,img:"Img/handban white.jpeg"},
+{id:223,category:"Sport-Wear",name:"Man-City Jessey",price:26000,img:"Img/Mancity jessey 3.jpeg"},
+{id:224,category:"Sport-Wear",name:"NBA Jessey",price:35000,img:"Img/NBA jessey.jpeg"},
 
 
 
@@ -456,8 +477,7 @@ function showUserLoggedIn(user) {
 
   document.getElementById("logout-desktop").addEventListener("click", logoutUser);
   document.getElementById("logout-mobile").addEventListener("click", logoutUser);
-
-  // ADD THIS:
+  
   document.querySelectorAll("#profile-open").forEach(btn => {
     btn.addEventListener("click", openProfile);
   });
@@ -829,7 +849,9 @@ document.querySelectorAll("input[name='deliveryMethod']").forEach(option => {
   });
 });
 
-
+// =====================
+// PROFILE / ORDER SYSTEM
+// =====================
 const profileModal = document.getElementById('modal-profile');
 
 // Fix LS KEYS

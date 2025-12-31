@@ -641,6 +641,9 @@ nav a:hover {
   .about-grid {
     grid-template-columns: 1fr;
   }
+  .about-img img{
+    width: 430px;
+  }
 }
 
 
@@ -901,7 +904,7 @@ footer input {
   border: none;
 }
 
-copyright {
+.copyright {
   text-align: center;
   margin-top: 1rem;
 }
